@@ -1,24 +1,25 @@
-# my-app
+# Logistyk
+
+## Przed uruchomieniem umieścić folder texture w htdocs (przejściowe)
 
 ## Project setup
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Kompiluj i postaw lokalny serwer
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Co jest nie tak
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Piętrzenie jest zrobione na sztywno
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Brak obliczeń związanych z naczepą
+
+#### Pola formularzu nie są zabespieczone
+
+#### Brak historii jakie dane zostały wprowadzone (wymiary kartonu)
