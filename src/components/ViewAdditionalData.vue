@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h2>Dane do pił</h2>
+      <h2>Dane do pił:</h2>
       <div>
         <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
 
