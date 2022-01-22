@@ -231,12 +231,12 @@ export default {
       if (whichPossibility == 1) {
         for (
           let z = 0;
-          z < this.widthSemitrailer - Pallet.width; //tuuu
+          z <= this.widthSemitrailer - Pallet.width; //tuuu
           z += Pallet.width
         ) {
           for (
             let x = 0;
-            x < this.depthSemitrailer - Pallet.depth;
+            x <= this.depthSemitrailer - Pallet.depth;
             x += Pallet.depth
           ) {
             let palletCenterPoint =
@@ -258,12 +258,12 @@ export default {
       } else {
         for (
           let z = 0;
-          z < this.depthSemitrailer - Pallet.width;
+          z <= this.depthSemitrailer - Pallet.width;
           z += Pallet.width
         ) {
           for (
             let x = 0;
-            x < this.widthSemitrailer - Pallet.depth;
+            x <= this.widthSemitrailer - Pallet.depth;
             x += Pallet.depth
           ) {
             let palletCenterPoint =
@@ -336,17 +336,17 @@ export default {
     },
   },
   watch: {
-    widthSemitrailer(newValue) {
-      this.semitrailer.scale.x = parseInt(newValue);
-      this.renderer.render(this.scene, this.camera);
-    },
-    heightSemitrailer(newValue) {
-      console.log(newValue);
-    },
-    depthSemitrailer(newValue) {
-      this.semitrailer.scale.z = parseInt(newValue);
-      this.renderer.render(this.scene, this.camera);
-    },
+    // widthSemitrailer(newValue) {
+    //   this.semitrailer.scale.x = parseInt(newValue);
+    //   this.renderer.render(this.scene, this.camera);
+    // },
+    // heightSemitrailer(newValue) {
+    //   console.log(newValue);
+    // },
+    // depthSemitrailer(newValue) {
+    //   this.semitrailer.scale.z = parseInt(newValue);
+    //   this.renderer.render(this.scene, this.camera);
+    // },
   },
 };
 </script>

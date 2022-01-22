@@ -1,6 +1,7 @@
 <template>
   <div>
-    <form>
+    <div>
+      <h2>Dane do pił</h2>
       <div>
         <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
 
@@ -72,7 +73,44 @@
           :disabled="!whetherToSetMaxWeight"
         />
       </div>
-    </form>
+    </div>
+
+    <div>
+      <h2>Dane naczepy:</h2>
+
+      <label for="semitrailerDepth">Długość (cm) : </label>
+      <input
+        id="semitrailerDepth"
+        type="number"
+        value="225"
+        v-model.number="semitrailerDepth"
+      />
+      <br />
+      <label for="semitrailerWidth">Szerokość (cm) : </label>
+      <input
+        id="semitrailerWidth"
+        type="number"
+        value="1350"
+        v-model.number="semitrailerWidth"
+      />
+      <br />
+      <label for="semitrailerHeight">Wysokość (cm) : </label>
+      <input
+        id="semitrailerHeight"
+        type="number"
+        value="275"
+        v-model.number="semitrailerHeight"
+      />
+      <br />
+      <label for="semitrailerWeight">Waga (kg) : </label>
+      <input
+        id="semitrailerWeight"
+        type="number"
+        value="275"
+        v-model.number="semitrailerWeight"
+      />
+      <br />
+    </div>
   </div>
 </template>
 
@@ -113,9 +151,53 @@ export default {
         this.setMaxHeight(value);
       },
     },
+    semitrailerWidth: {
+      get() {
+        return this.$store.state.semitrailerWidth;
+      },
+      set(value) {
+        console.log(typeof value, value);
+        this.setSemitrailerWidth(value);
+      },
+    },
+    semitrailerHeight: {
+      get() {
+        return this.$store.state.semitrailerHeight;
+      },
+      set(value) {
+        console.log(typeof value, value);
+        this.setSemitrailerHeight(value);
+      },
+    },
+    semitrailerDepth: {
+      get() {
+        return this.$store.state.semitrailerDepth;
+      },
+      set(value) {
+        console.log(typeof value, value);
+        this.setSemitrailerDepth(value);
+      },
+    },
+    semitrailerWeight: {
+      get() {
+        return this.$store.state.semitrailerWeight;
+      },
+      set(value) {
+        console.log(typeof value, value);
+        this.setSemitrailerWeight(value);
+      },
+    },
   },
   methods: {
-    ...mapMutations(["setLevelY", "setMaxWeight", "setMaxHeight"]),
+    ...mapMutations([
+      "setLevelY",
+      "setMaxWeight",
+      "setMaxHeight",
+      "setSemitrailerWidth",
+      "setSemitrailerHeight",
+      "setSemitrailerDepth",
+      "setSemitrailerWeight",
+    ]),
   },
 };
 </script>
