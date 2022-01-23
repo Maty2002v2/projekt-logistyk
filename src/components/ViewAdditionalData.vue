@@ -24,7 +24,7 @@
       <br />
 
       <div>
-        <label for="whetherToSetMaxHeight"
+        <label for="whetherToSetMaxHeightPallet"
           >Chcesz podać maksymalną wysokość pjł ? (cm)</label
         >
 
@@ -32,25 +32,25 @@
 
         <input
           type="checkbox"
-          id="whetherToSetMaxHeight"
-          v-model="whetherToSetMaxHeight"
+          id="whetherToSetMaxHeightPallet"
+          v-model="whetherToSetMaxHeightPallet"
         />
-        <span v-if="whetherToSetMaxHeight"> Tak</span>
+        <span v-if="whetherToSetMaxHeightPallet"> Tak</span>
         <span v-else> Nie</span>
 
         <br />
 
         <input
           type="number"
-          v-model.number="maxHeight"
-          :disabled="!whetherToSetMaxHeight"
+          v-model.number="maxHeightPallet"
+          :disabled="!whetherToSetMaxHeightPallet"
         />
       </div>
 
       <br />
 
       <div>
-        <label for="whetherToSetMaxWeight"
+        <label for="whetherToSetMaxWeightPallet"
           >Chcesz podać maksymalną wagę pjł ? (kg)</label
         >
 
@@ -58,19 +58,19 @@
 
         <input
           type="checkbox"
-          id="whetherToSetMaxWeight"
-          v-model="whetherToSetMaxWeight"
+          id="whetherToSetMaxWeightPallet"
+          v-model="whetherToSetMaxWeightPallet"
         />
-        <span v-if="whetherToSetMaxWeight"> Tak</span>
+        <span v-if="whetherToSetMaxWeightPallet"> Tak</span>
         <span v-else> Nie</span>
 
         <br />
 
         <input
           type="number"
-          id="maxWeight"
-          v-model.number="maxWeight"
-          :disabled="!whetherToSetMaxWeight"
+          id="maxWeightPallet"
+          v-model.number="maxWeightPallet"
+          :disabled="!whetherToSetMaxWeightPallet"
         />
       </div>
     </div>
@@ -122,8 +122,8 @@ export default {
   data() {
     return {
       whetherToSetHeight: false,
-      whetherToSetMaxWeight: false,
-      whetherToSetMaxHeight: false,
+      whetherToSetMaxWeightPallet: false,
+      whetherToSetMaxHeightPallet: false,
     };
   },
   computed: {
@@ -135,20 +135,20 @@ export default {
         this.setLevelY(value);
       },
     },
-    maxWeight: {
+    maxWeightPallet: {
       get() {
-        return this.$store.state.maxWeight;
+        return this.$store.state.maxWeightPallet;
       },
       set(value) {
-        this.setMaxWeight(value);
+        this.setMaxWeightPallet(value);
       },
     },
-    maxHeight: {
+    maxHeightPallet: {
       get() {
-        return this.$store.state.maxHeight;
+        return this.$store.state.maxHeightPallet;
       },
       set(value) {
-        this.setMaxHeight(value);
+        this.setMaxHeightPallet(value);
       },
     },
     semitrailerWidth: {
@@ -191,8 +191,8 @@ export default {
   methods: {
     ...mapMutations([
       "setLevelY",
-      "setMaxWeight",
-      "setMaxHeight",
+      "setMaxWeightPallet",
+      "setMaxHeightPallet",
       "setSemitrailerWidth",
       "setSemitrailerHeight",
       "setSemitrailerDepth",

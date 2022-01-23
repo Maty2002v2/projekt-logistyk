@@ -11,14 +11,17 @@ const store = new Vuex.Store({
     depthCarton: 20, //20 60, 40 80
     weightCarton: 15,
     levelY: 7,
-    maxHeight: 160,
-    maxWeight: 730,
+    maxHeightPallet: 160,
+    maxWeightPallet: 730,
+    weightOfWholePallet: 25,
     numberOfPackages: 0,
+    numberOfPallets: 0,
     semitrailerWidth: 1350,
     semitrailerHeight: 225,
     semitrailerDepth: 275,
     semitrailerWeight: 500,
   },
+  //
   mutations: {
     setTypePallet(state, payload) {
       state.typePallet = payload;
@@ -38,14 +41,20 @@ const store = new Vuex.Store({
     setLevelY(state, payload) {
       state.levelY = payload;
     },
-    setMaxWeight(state, payload) {
-      state.maxWeight = payload;
+    setMaxWeightPallet(state, payload) {
+      state.maxWeightPallet = payload;
     },
-    setMaxHeight(state, payload) {
-      state.maxHeight = payload;
+    setWeightOfWholePallet(state, payload) {
+      state.weightOfWholePallet = payload;
+    },
+    setMaxHeightPallet(state, payload) {
+      state.maxHeightPallet = payload;
     },
     setNumberOfPackages(state, payload) {
       state.numberOfPackages = payload;
+    },
+    setNumberOfPallets(state, payload) {
+      state.numberOfPallets = payload;
     },
     setSemitrailerWidth(state, payload) {
       state.semitrailerWidth = payload;

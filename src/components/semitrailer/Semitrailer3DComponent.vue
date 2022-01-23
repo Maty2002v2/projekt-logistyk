@@ -6,7 +6,7 @@
 
 <script>
 import * as THREE from "three";
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import semitrailer from "../../classes/Semitrailer.js";
 import LargePallet from "../../classes/LargePallet"; //1200x800x144 25
 import SmallerPallet from "../../classes/SmallerPallet"; //1200x1000x144 25
@@ -28,6 +28,10 @@ export default {
       default: 275,
     },
     depthSemitrailer: {
+      type: Number,
+      default: 225,
+    },
+    maxWeightSemitrailer: {
       type: Number,
       default: 225,
     },
@@ -66,6 +70,7 @@ export default {
       lastScroll: 0,
       mouseX: 0,
       mouseY: 0,
+      numberOfPallets: 0,
     };
   },
   created() {
@@ -141,8 +146,16 @@ export default {
     // this.scene.clear();
   },
   computed: {
+    ifPalletsAreTooHeavy() {
+      return (
+        (this.numberOfPallets + 1) * this.weightOfWholePallet <=
+        this.maxWeightSemitrailer
+      );
+    },
+
     ...mapState({
       typePallet: (state) => state.typePallet,
+      weightOfWholePallet: (state) => state.weightOfWholePallet,
     }),
   },
   methods: {
@@ -187,6 +200,8 @@ export default {
       /*Flaga informująca po którym boku palety chcemy je rozmieścić (czy po dłuższym (2) czy krótszym (1)) */
       let whichPossibility = 2;
 
+      let breakFlag = false;
+
       let firstPossibility =
         Math.floor(this.widthSemitrailer / Pallet.width) *
         Math.floor(this.depthSemitrailer / Pallet.depth);
@@ -226,7 +241,6 @@ export default {
 
       console.log(whichPossibility);
 
-      var i = 0;
       // if (this.typePallet === 1) {
       if (whichPossibility == 1) {
         for (
@@ -234,26 +248,37 @@ export default {
           z <= this.widthSemitrailer - Pallet.width; //tuuu
           z += Pallet.width
         ) {
-          for (
-            let x = 0;
-            x <= this.depthSemitrailer - Pallet.depth;
-            x += Pallet.depth
-          ) {
-            let palletCenterPoint =
-              this.typePallet == 1
-                ? new SmallerPallet().centerPoint
-                : new LargePallet().centerPoint;
-            palletCenterPoint.rotation.y = Math.PI / 2;
-            this.pallets.add(palletCenterPoint);
-            palletCenterPoint.position.set(
-              this.depthSemitrailer / 2 - Pallet.depth / 2 - x, //0
-              3,
-              this.widthSemitrailer / 2 - Pallet.width / 2 - z //40
-            );
-            i++;
-            // console.log("x: ", x);
+          if (!breakFlag) {
+            for (
+              let x = 0;
+              x <= this.depthSemitrailer - Pallet.depth;
+              x += Pallet.depth
+            ) {
+              if (this.ifPalletsAreTooHeavy) {
+                let palletCenterPoint =
+                  this.typePallet == 1
+                    ? new SmallerPallet().centerPoint
+                    : new LargePallet().centerPoint;
+                palletCenterPoint.rotation.y = Math.PI / 2;
+                this.pallets.add(palletCenterPoint);
+                palletCenterPoint.position.set(
+                  this.depthSemitrailer / 2 - Pallet.depth / 2 - x, //0
+                  3,
+                  this.widthSemitrailer / 2 - Pallet.width / 2 - z //40
+                );
+                this.numberOfPallets++;
+                // console.log("x: ", x);
+              } else {
+                breakFlag = true;
+                break;
+              }
+            }
+          } else {
+            break;
           }
+
           // console.log("z: ", z);
+          console.log("pentla");
         }
       } else {
         for (
@@ -261,25 +286,36 @@ export default {
           z <= this.depthSemitrailer - Pallet.width;
           z += Pallet.width
         ) {
-          for (
-            let x = 0;
-            x <= this.widthSemitrailer - Pallet.depth;
-            x += Pallet.depth
-          ) {
-            let palletCenterPoint =
-              this.typePallet == 1
-                ? new SmallerPallet().centerPoint
-                : new LargePallet().centerPoint;
-            // pallet.rotation.y = Math.PI / 2;
-            this.pallets.add(palletCenterPoint);
-            palletCenterPoint.position.set(
-              this.depthSemitrailer / 2 - Pallet.width / 2 - z, //0
-              3,
-              this.widthSemitrailer / 2 - Pallet.depth / 2 - x //40
-            );
-            i++;
-            // console.log("x: ", x);
+          if (!breakFlag) {
+            for (
+              let x = 0;
+              x <= this.widthSemitrailer - Pallet.depth;
+              x += Pallet.depth
+            ) {
+              if (this.ifPalletsAreTooHeavy) {
+                let palletCenterPoint =
+                  this.typePallet == 1
+                    ? new SmallerPallet().centerPoint
+                    : new LargePallet().centerPoint;
+                // pallet.rotation.y = Math.PI / 2;
+                this.pallets.add(palletCenterPoint);
+                palletCenterPoint.position.set(
+                  this.depthSemitrailer / 2 - Pallet.width / 2 - z, //0
+                  3,
+                  this.widthSemitrailer / 2 - Pallet.depth / 2 - x //40
+                );
+                this.numberOfPallets++;
+              } else {
+                breakFlag = true;
+                break;
+              }
+
+              // console.log("x: ", x);
+            }
+          } else {
+            break;
           }
+
           // console.log("z: ", z);
         }
       }
@@ -323,7 +359,8 @@ export default {
       //     i++;
       //   }
       // }
-      console.log(i);
+      console.log(this.numberOfPallets);
+      this.setNumberOfPallets(this.numberOfPallets);
       // } else {
       //   console.log("d");
       // }
@@ -334,6 +371,8 @@ export default {
       //   pallet.position.set(z + 10, 3, z + 100);
       // }
     },
+
+    ...mapMutations(["setNumberOfPallets"]),
   },
   watch: {
     // widthSemitrailer(newValue) {

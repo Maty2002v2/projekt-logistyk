@@ -59,7 +59,6 @@ export default {
     };
   },
   created() {
-    console.log("dsdsad");
     this.recognizePalette();
 
     let firstPossibility =
@@ -117,6 +116,9 @@ export default {
     // );
 
     this.setNumberOfPackages(this.calculateNumberCartons);
+    this.setWeightOfWholePallet(
+      this.calculateNumberCartons * this.weightCarton + 25
+    );
   },
   computed: {
     calculateHeight() {
@@ -151,8 +153,8 @@ export default {
       return (
         this.pallet.width *
         this.pallet.depth *
-        (this.maxHeight > 0
-          ? this.maxHeight - this.pallet.height
+        (this.maxHeightPallet > 0
+          ? this.maxHeightPallet - this.pallet.height
           : this.pallet.height)
       );
     },
@@ -164,8 +166,9 @@ export default {
       depthCarton: (state) => state.depthCarton,
       weightCarton: (state) => state.weightCarton,
       levelY: (state) => state.levelY,
-      maxWeight: (state) => state.maxWeight,
-      maxHeight: (state) => state.maxHeight,
+      maxWeightPallet: (state) => state.maxWeightPallet,
+      maxHeightPallet: (state) => state.maxHeightPallet,
+      semitrailerHeight: (state) => state.semitrailerHeight,
     }),
   },
   methods: {
@@ -174,15 +177,18 @@ export default {
       let flag = true;
 
       while (flag) {
-        if (this.maxHeight > 0) {
-          if (this.heightCarton * (i + 1) + 14.4 >= this.maxHeight) {
+        if (this.maxHeightPallet > 0) {
+          if (this.heightCarton * (i + 1) + 14.4 >= this.maxHeightPallet) {
             flag = false;
             break;
           }
         }
 
-        if (this.maxWeight > 0) {
-          if (this.calculateWeightOfFloor * (i + 1) + 25 >= this.maxWeight) {
+        if (this.maxWeightPallet > 0) {
+          if (
+            this.calculateWeightOfFloor * (i + 1) + 25 >=
+            this.maxWeightPallet
+          ) {
             flag = false;
             break;
           }
@@ -193,6 +199,11 @@ export default {
             flag = false;
             break;
           }
+        }
+
+        if (this.heightCarton * (i + 1) + 14.4 >= this.semitrailerHeight) {
+          flag = false;
+          break;
         }
 
         i++;
@@ -212,7 +223,7 @@ export default {
       }
     },
 
-    ...mapMutations(["setNumberOfPackages"]),
+    ...mapMutations(["setNumberOfPackages", "setWeightOfWholePallet"]),
   },
 };
 </script>
