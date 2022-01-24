@@ -74,7 +74,6 @@ export default {
     };
   },
   created() {
-    console.clear();
     this.scene.add(this.camera);
     this.scene.add(this.light1, this.light2, this.light3);
     this.scene.add(this.semitrailer);
@@ -209,23 +208,22 @@ export default {
         Math.floor(this.depthSemitrailer / Pallet.width) *
         Math.floor(this.widthSemitrailer / Pallet.depth);
 
-      console.log(firstPossibility, secoundPossibility);
-      console.log(
-        Math.floor(this.widthSemitrailer / Pallet.width),
-        "*",
-        Math.floor(this.depthSemitrailer / Pallet.depth)
-      );
-      console.log(
-        Math.floor(this.depthSemitrailer / Pallet.width),
-        "*",
-        Math.floor(this.widthSemitrailer / Pallet.depth)
-      );
+      // console.log(firstPossibility, secoundPossibility);
+      // console.log(
+      //   Math.floor(this.widthSemitrailer / Pallet.width),
+      //   "*",
+      //   Math.floor(this.depthSemitrailer / Pallet.depth)
+      // );
+      // console.log(
+      //   Math.floor(this.depthSemitrailer / Pallet.width),
+      //   "*",
+      //   Math.floor(this.widthSemitrailer / Pallet.depth)
+      // );
 
       this.pallets.rotation.y = Math.PI / 2;
 
       if (firstPossibility > secoundPossibility) {
         whichPossibility = 1;
-        console.log("SIEMA");
       } else {
         Math.PI / 2;
       }
@@ -239,7 +237,7 @@ export default {
       //   this.widthSemitrailer / 2 - 40 - 0
       // );
 
-      console.log(whichPossibility);
+      // console.log(whichPossibility);
 
       // if (this.typePallet === 1) {
       if (whichPossibility == 1) {
@@ -278,7 +276,6 @@ export default {
           }
 
           // console.log("z: ", z);
-          console.log("pentla");
         }
       } else {
         for (
@@ -359,7 +356,6 @@ export default {
       //     i++;
       //   }
       // }
-      console.log(this.numberOfPallets);
       this.setNumberOfPallets(this.numberOfPallets);
       // } else {
       //   console.log("d");

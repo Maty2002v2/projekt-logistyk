@@ -156,7 +156,6 @@ export default {
         return this.$store.state.semitrailerWidth;
       },
       set(value) {
-        console.log(typeof value, value);
         this.setSemitrailerWidth(value);
       },
     },
@@ -165,7 +164,6 @@ export default {
         return this.$store.state.semitrailerHeight;
       },
       set(value) {
-        console.log(typeof value, value);
         this.setSemitrailerHeight(value);
       },
     },
@@ -174,7 +172,6 @@ export default {
         return this.$store.state.semitrailerDepth;
       },
       set(value) {
-        console.log(typeof value, value);
         this.setSemitrailerDepth(value);
       },
     },
@@ -183,7 +180,6 @@ export default {
         return this.$store.state.semitrailerWeight;
       },
       set(value) {
-        console.log(typeof value, value);
         this.setSemitrailerWeight(value);
       },
     },

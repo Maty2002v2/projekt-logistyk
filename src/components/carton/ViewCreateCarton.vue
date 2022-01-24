@@ -1,22 +1,25 @@
 <template>
-  <div id="app">
-    <label for="cartonWidth">Szerokość (cm) : </label>
-    <input id="cartonWidth" type="number" v-model.number="width" />
-    <br />
-    <label for="cartonHeight">Wysokość (cm) :</label>
-    <input id="cartonHeight" type="number" v-model.number="height" />
-    <br />
-    <label for="cartonDepth">Grubość (cm) : </label>
-    <input id="cartonDepth" type="number" v-model.number="depth" />
-    <br />
-    <label for="cartonWeight">Waga (kg) : </label>
-    <input id="cartonWeight" type="number" v-model.number="weight" />
-
-    <Carton-3-d-component
-      :width="width"
-      :height="height"
-      :depth="depth"
-    ></Carton-3-d-component>
+  <div class="flex-container">
+    <div id="divFormCarton" class="divCarton">
+      <label for="cartonWidth">Szerokość (cm) : </label>
+      <input id="cartonWidth" type="number" v-model.number="width" />
+      <br />
+      <label for="cartonHeight">Wysokość (cm) :</label>
+      <input id="cartonHeight" type="number" v-model.number="height" />
+      <br />
+      <label for="cartonDepth">Grubość (cm) : </label>
+      <input id="cartonDepth" type="number" v-model.number="depth" />
+      <br />
+      <label for="cartonWeight">Waga (kg) : </label>
+      <input id="cartonWeight" type="number" v-model.number="weight" />
+    </div>
+    <div ref="divCarton3D" id="divCarton3D" class="divCarton">
+      <Carton-3-d-component
+        :width="width"
+        :height="height"
+        :depth="depth"
+      ></Carton-3-d-component>
+    </div>
   </div>
 </template>
 
@@ -105,5 +108,36 @@ body {
   /* text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  /* justify-content: space-around; */
+}
+.divCarton {
+  width: 50%;
+  height: 100vh;
+}
+#divFormCarton {
+  text-align: center;
+}
+#divCarton3D {
+  background: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* justify-content: space-around; */
+  }
+  .divCarton {
+    width: 100%;
+    height: 80vh;
+  }
 }
 </style>
