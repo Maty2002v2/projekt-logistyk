@@ -16,11 +16,11 @@ export default {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      window.innerWidth / 2 / window.innerHeight,
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
     const light1 = new THREE.PointLight(0xffffff, 1);
     const light2 = new THREE.PointLight(0xffffff, 1);
@@ -46,7 +46,6 @@ export default {
 
     this.scene.add(this.camera);
     this.scene.add(this.light1, this.light2, this.light3);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
 
     this.light1.position.set(50, 20, 0);
 
@@ -63,6 +62,10 @@ export default {
     window.addEventListener("resize", this.windowResize);
   },
   mounted() {
+    this.renderer.setSize(
+      this.$parent.$refs.segmentPallet3D.offsetWidth,
+      this.$parent.$refs.segmentPallet3D.offsetHeight
+    );
     this.$refs.canvas.appendChild(this.renderer.domElement);
     this.animate();
   },
@@ -99,10 +102,15 @@ export default {
       this.largePallet.rotation.y += 0.01;
     },
     windowResize() {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.aspect =
+        this.$parent.$refs.segmentPallet3D.offsetWidth /
+        this.$parent.$refs.segmentPallet3D.offsetHeight;
       this.camera.updateProjectionMatrix();
 
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setSize(
+        this.$parent.$refs.segmentPallet3D.offsetWidth,
+        this.$parent.$refs.segmentPallet3D.offsetHeight
+      );
     },
   },
   watch: {

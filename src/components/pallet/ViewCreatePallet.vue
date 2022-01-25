@@ -6,7 +6,7 @@
         <option value="2">Inna (1200x100x144)</option>
       </select>
     </div>
-    <div class="segmentBlock segment3D">
+    <div ref="segmentPallet3D" class="segmentBlock segment3D">
       <pallet-3-d-component :typePallet="typePallet"></pallet-3-d-component>
     </div>
   </div>
