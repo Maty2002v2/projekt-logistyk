@@ -16,6 +16,8 @@ import ViewResultsPallet from "./components/resultPallet/ViewResultsPallet.vue";
 import ViewCreateSemitrailer from "./components/semitrailer/ViewCreateSemitrailer";
 import NavigationComponent from "./components/NavigationComponent";
 
+import "@/styles/globalStyles.css";
+
 export default {
   name: "App",
   components: {

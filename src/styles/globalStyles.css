@@ -1,0 +1,32 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.segmentBlock {
+  width: 50%;
+  height: 100vh;
+}
+
+.segmentInformation {
+  text-align: center;
+}
+
+.segment3D {
+  background: white;
+}
+
+@media only screen and (max-width: 800px) {
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .segmentBlock {
+    width: 100%;
+    height: 80vh;
+  }
+}

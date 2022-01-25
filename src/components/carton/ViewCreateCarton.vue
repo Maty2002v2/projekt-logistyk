@@ -1,6 +1,6 @@
 <template>
   <div class="flex-container">
-    <div id="divFormCarton" class="divCarton">
+    <div class="segmentBlock segmentInformation">
       <label for="cartonWidth">Szerokość (cm) : </label>
       <input id="cartonWidth" type="number" v-model.number="width" />
       <br />
@@ -13,7 +13,7 @@
       <label for="cartonWeight">Waga (kg) : </label>
       <input id="cartonWeight" type="number" v-model.number="weight" />
     </div>
-    <div ref="divCarton3D" id="divCarton3D" class="divCarton">
+    <div ref="segmentCarton3D" class="segmentBlock segment3D">
       <Carton-3-d-component
         :width="width"
         :height="height"
@@ -108,36 +108,5 @@ body {
   /* text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
-}
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  /* justify-content: space-around; */
-}
-.divCarton {
-  width: 50%;
-  height: 100vh;
-}
-#divFormCarton {
-  text-align: center;
-}
-#divCarton3D {
-  background: white;
-}
-
-@media only screen and (max-width: 800px) {
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    /* justify-content: space-around; */
-  }
-  .divCarton {
-    width: 100%;
-    height: 80vh;
-  }
 }
 </style>

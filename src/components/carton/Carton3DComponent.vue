@@ -15,7 +15,6 @@ export default {
     depth: Number,
   },
   data() {
-    console.log(this.$parent.$refs.divCarton3D);
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -69,8 +68,8 @@ export default {
   },
   mounted() {
     this.renderer.setSize(
-      this.$parent.$refs.divCarton3D.offsetWidth,
-      this.$parent.$refs.divCarton3D.offsetHeight
+      this.$parent.$refs.segmentCarton3D.offsetWidth,
+      this.$parent.$refs.segmentCarton3D.offsetHeight
     );
     this.$refs.canvas.appendChild(this.renderer.domElement);
     this.animate();
@@ -103,13 +102,13 @@ export default {
     },
     windowResize() {
       this.camera.aspect =
-        this.$parent.$refs.divCarton3D.offsetWidth /
-        this.$parent.$refs.divCarton3D.offsetHeight;
+        this.$parent.$refs.segmentCarton3D.offsetWidth /
+        this.$parent.$refs.segmentCarton3D.offsetHeight;
       this.camera.updateProjectionMatrix();
 
       this.renderer.setSize(
-        this.$parent.$refs.divCarton3D.offsetWidth,
-        this.$parent.$refs.divCarton3D.offsetHeight
+        this.$parent.$refs.segmentCarton3D.offsetWidth,
+        this.$parent.$refs.segmentCarton3D.offsetHeight
       );
     },
   },
