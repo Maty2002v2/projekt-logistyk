@@ -128,6 +128,7 @@ export default {
       false
     );
     this.$refs.canvas.appendChild(this.renderer.domElement);
+    this.windowResize();
     this.animate();
   },
   beforeDestroy() {

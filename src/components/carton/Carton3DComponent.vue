@@ -72,6 +72,7 @@ export default {
       this.$parent.$refs.segmentCarton3D.offsetHeight
     );
     this.$refs.canvas.appendChild(this.renderer.domElement);
+    this.windowResize();
     this.animate();
   },
   destroyed() {

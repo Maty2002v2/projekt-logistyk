@@ -67,6 +67,7 @@ export default {
       this.$parent.$refs.segmentPallet3D.offsetHeight
     );
     this.$refs.canvas.appendChild(this.renderer.domElement);
+    this.windowResize();
     this.animate();
   },
   destroyed() {
