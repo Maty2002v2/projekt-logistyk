@@ -47,7 +47,7 @@ export default {
       0.1,
       1500
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
     const light1 = new THREE.PointLight(0xffffff, 2);
     const light2 = new THREE.PointLight(0xffffff, 1);

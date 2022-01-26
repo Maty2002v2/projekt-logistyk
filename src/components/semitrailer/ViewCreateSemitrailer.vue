@@ -1,6 +1,11 @@
 <template>
   <div class="flex-container">
     <div class="segmentBlock segmentInformation">
+      <img
+        class="segmentInformationImageBg"
+        :src="require('@/assets/businessman-g46770c33e_1280.jpg')"
+        alt="Człowiek i 'góra' kartonów"
+      />
       <p>Ilość palet: {{ numberOfPallets }}</p>
       <p>Ilość kartonów: {{ numberOfPallets * numberOfPackages }}</p>
       <p>Waga palety: {{ weightOfWholePallet }} kg</p>

@@ -1,6 +1,11 @@
 <template>
   <div>
     <div>
+      <img
+        class="segmentInformationImageBg"
+        :src="require('@/assets/businessman-g46770c33e_1280.jpg')"
+        alt="Człowiek i 'góra' kartonów"
+      />
       <h2>Dane do pił:</h2>
       <div>
         <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
