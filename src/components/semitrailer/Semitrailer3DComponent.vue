@@ -43,7 +43,7 @@ export default {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       100,
-      window.innerWidth / window.innerHeight,
+      window.innerWidth / 2 / window.innerHeight,
       0.1,
       1500
     );
@@ -78,7 +78,6 @@ export default {
     this.scene.add(this.light1, this.light2, this.light3);
     this.scene.add(this.semitrailer);
     this.semitrailer.add(this.pallets);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
 
     this.light1.position.set(50, 20, 0);
 
@@ -119,6 +118,10 @@ export default {
     // );
   },
   mounted() {
+    this.renderer.setSize(
+      this.$parent.$refs.segmentSemitrailer3D.offsetWidth,
+      this.$parent.$refs.segmentSemitrailer3D.offsetHeight
+    );
     this.$refs.canvas.addEventListener(
       "mousemove",
       this.documentMouseMove,
@@ -187,10 +190,15 @@ export default {
       // this.camera.lookAt(this.scene.position);
     },
     windowResize() {
-      this.camera.aspect = window.innerWidth / window.innerHeight;
+      this.camera.aspect =
+        this.$parent.$refs.segmentSemitrailer3D.offsetWidth /
+        this.$parent.$refs.segmentSemitrailer3D.offsetHeight;
       this.camera.updateProjectionMatrix();
 
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
+      this.renderer.setSize(
+        this.$parent.$refs.segmentSemitrailer3D.offsetWidth,
+        this.$parent.$refs.segmentSemitrailer3D.offsetHeight
+      );
     },
     palletInitialization() {
       const Pallet =

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="flex-container">
+    <div class="segmentBlock segmentInformation">
       <p>Ilość palet: {{ numberOfPallets }}</p>
       <p>Ilość kartonów: {{ numberOfPallets * numberOfPackages }}</p>
       <p>Waga palety: {{ weightOfWholePallet }} kg</p>
@@ -8,13 +8,14 @@
       <p>Maksymalna waga ładunku: {{ maxWeightSemitrailerFromStore }} kg</p>
       <p>Maksymalna wysokość ładunku: {{ maxHeightSemitrailerFromStore }} cm</p>
     </div>
-
-    <semitrailer-3-d-component
-      :widthSemitrailer="widthSemitrailerFromStore"
-      :heightSemitrailer="heightSemitrailerFromStore"
-      :depthSemitrailer="depthSemitrailerFromStore"
-      :maxWeightSemitrailer="maxWeightSemitrailerFromStore"
-    ></semitrailer-3-d-component>
+    <div ref="segmentSemitrailer3D" class="segmentBlock segment3D">
+      <semitrailer-3-d-component
+        :widthSemitrailer="widthSemitrailerFromStore"
+        :heightSemitrailer="heightSemitrailerFromStore"
+        :depthSemitrailer="depthSemitrailerFromStore"
+        :maxWeightSemitrailer="maxWeightSemitrailerFromStore"
+      ></semitrailer-3-d-component>
+    </div>
   </div>
 </template>
 
