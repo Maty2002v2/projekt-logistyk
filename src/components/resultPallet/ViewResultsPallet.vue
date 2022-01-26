@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div class="flex-container">
+    <div class="segmentBlock segmentInformation">
       <p>Liczba warstw: {{ howManyFloors() }}</p>
       <p>Liczba kartonów: {{ calculateNumberCartons }}</p>
       <p>Wysokość: {{ calculateHeightWithoutPallet }} cm (bez palety)</p>
@@ -15,17 +15,18 @@
         Objętość jednej palety: {{ calculateVolumeOfPallet }} cm<sup>3</sup>
         (wymiary palety razy wyśokość)
       </p>
-      <p></p>
     </div>
-    <result-3-d-component
-      :typePallet="typePallet"
-      :widthCarton="carton.width"
-      :heightCarton="carton.height"
-      :depthCarton="carton.depth"
-      :levelX="levels.x"
-      :levelY="levels.y"
-      :levelZ="levels.z"
-    ></result-3-d-component>
+    <div ref="segmentResultsPallet3D" class="segmentBlock segment3D">
+      <result-3-d-component
+        :typePallet="typePallet"
+        :widthCarton="carton.width"
+        :heightCarton="carton.height"
+        :depthCarton="carton.depth"
+        :levelX="levels.x"
+        :levelY="levels.y"
+        :levelZ="levels.z"
+      ></result-3-d-component>
+    </div>
   </div>
 </template>
 

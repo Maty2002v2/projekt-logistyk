@@ -51,7 +51,7 @@ export default {
 <style>
 body {
   margin: 0;
-  background: gray;
+  background: white;
   /* overflow: hidden; */
 }
 #app {

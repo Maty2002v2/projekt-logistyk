@@ -12,6 +12,11 @@
 
 .segmentInformation {
   text-align: center;
+  background-image: url("../assets/businessman-g46770c33e_1280.jpg");
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
 }
 
 .segment3D {
