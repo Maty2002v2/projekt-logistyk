@@ -1,82 +1,79 @@
 <template>
-  <div>
+  <div class="segmentInformation">
     <div>
-      <img
-        class="segmentInformationImageBg"
-        :src="require('@/assets/businessman-g46770c33e_1280.jpg')"
-        alt="Człowiek i 'góra' kartonów"
-      />
-      <h2>Dane do pił:</h2>
       <div>
-        <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
+        <h2>Dane do pił:</h2>
+        <div>
+          <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
+
+          <br />
+
+          <input type="checkbox" id="levelY" v-model="whetherToSetHeight" />
+          <span v-if="whetherToSetHeight"> Tak</span>
+          <span v-else> Nie</span>
+
+          <br />
+
+          <input
+            type="number"
+            id="levelY"
+            v-model.number="levelY"
+            :disabled="!whetherToSetHeight"
+          />
+        </div>
 
         <br />
 
-        <input type="checkbox" id="levelY" v-model="whetherToSetHeight" />
-        <span v-if="whetherToSetHeight"> Tak</span>
-        <span v-else> Nie</span>
+        <div>
+          <label for="whetherToSetMaxHeightPallet"
+            >Chcesz podać maksymalną wysokość pjł ? (cm)</label
+          >
+
+          <br />
+
+          <input
+            type="checkbox"
+            id="whetherToSetMaxHeightPallet"
+            v-model="whetherToSetMaxHeightPallet"
+          />
+          <span v-if="whetherToSetMaxHeightPallet"> Tak</span>
+          <span v-else> Nie</span>
+
+          <br />
+
+          <input
+            type="number"
+            v-model.number="maxHeightPallet"
+            :disabled="!whetherToSetMaxHeightPallet"
+          />
+        </div>
 
         <br />
 
-        <input
-          type="number"
-          id="levelY"
-          v-model.number="levelY"
-          :disabled="!whetherToSetHeight"
-        />
-      </div>
+        <div>
+          <label for="whetherToSetMaxWeightPallet"
+            >Chcesz podać maksymalną wagę pjł ? (kg)</label
+          >
 
-      <br />
+          <br />
 
-      <div>
-        <label for="whetherToSetMaxHeightPallet"
-          >Chcesz podać maksymalną wysokość pjł ? (cm)</label
-        >
+          <input
+            type="checkbox"
+            id="whetherToSetMaxWeightPallet"
+            v-model="whetherToSetMaxWeightPallet"
+          />
+          <span v-if="whetherToSetMaxWeightPallet"> Tak</span>
+          <span v-else> Nie</span>
 
-        <br />
+          <br />
 
-        <input
-          type="checkbox"
-          id="whetherToSetMaxHeightPallet"
-          v-model="whetherToSetMaxHeightPallet"
-        />
-        <span v-if="whetherToSetMaxHeightPallet"> Tak</span>
-        <span v-else> Nie</span>
-
-        <br />
-
-        <input
-          type="number"
-          v-model.number="maxHeightPallet"
-          :disabled="!whetherToSetMaxHeightPallet"
-        />
-      </div>
-
-      <br />
-
-      <div>
-        <label for="whetherToSetMaxWeightPallet"
-          >Chcesz podać maksymalną wagę pjł ? (kg)</label
-        >
-
-        <br />
-
-        <input
-          type="checkbox"
-          id="whetherToSetMaxWeightPallet"
-          v-model="whetherToSetMaxWeightPallet"
-        />
-        <span v-if="whetherToSetMaxWeightPallet"> Tak</span>
-        <span v-else> Nie</span>
-
-        <br />
-
-        <input
-          type="number"
-          id="maxWeightPallet"
-          v-model.number="maxWeightPallet"
-          :disabled="!whetherToSetMaxWeightPallet"
-        />
+          <input
+            type="number"
+            id="maxWeightPallet"
+            v-model.number="maxWeightPallet"
+            :disabled="!whetherToSetMaxWeightPallet"
+          />
+        </div>
       </div>
     </div>
 
@@ -121,9 +118,13 @@
 
 <script>
 import { mapMutations } from "vuex";
+// import BoxBorder from "./BoxBorder.vue";
 
 export default {
   name: "ViewAdditionalData",
+  components: {
+    // BoxBorder,
+  },
   data() {
     return {
       whetherToSetHeight: false,

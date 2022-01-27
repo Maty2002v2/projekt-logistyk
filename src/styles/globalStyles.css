@@ -1,16 +1,10 @@
 .flex-container {
   display: flex;
   justify-content: space-between;
-  overflow-x: hidden;
   width: 100vw;
   height: 100vh; /*100%*/
+  overflow-x: hidden;
 }
-/* .col-25 {
-  flex: 25%;
-}
-.col-75 {
-  flex: 75%;
-} */
 .segmentBlock {
   width: 50%;
   max-height: 100vh;
@@ -20,28 +14,31 @@
   padding: 30px 0px;
   text-align: center;
 }
-.segment3D {
-  background: white;
-  min-height: 50vh;
-}
-.segmentInformationImageBg {
+.segmentInformation::after {
+  content: "";
+  background-image: url("../assets/businessman-g46770c33e_1280.jpg");
+  background-size: cover;
   position: absolute;
-  z-index: -10000;
-  top: 50%;
-  left: 50%;
-  max-width: 150%;
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  opacity: 0.2;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
+  z-index: -999;
 }
-/* input,
+.segment3D {
+  min-height: 50vh;
+  background: white;
+}
+input,
 select {
+  display: block;
   width: 80%;
-  padding: 12px;
+  margin: auto;
   border: 1px solid #ccc;
   border-radius: 4px;
-} */
+  box-sizing: border-box;
+}
 
 @media only screen and (max-width: 800px) {
   .flex-container {
@@ -53,12 +50,5 @@ select {
   .segmentBlock {
     width: 100%;
     height: 100%;
-  }
-}
-
-@media only screen and (max-height: 400px) {
-  .segmentInformationBorder {
-    max-height: 100%;
-    overflow: scroll;
   }
 }
