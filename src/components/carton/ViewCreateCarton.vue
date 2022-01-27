@@ -6,36 +6,40 @@
         :src="require('@/assets/businessman-g46770c33e_1280.jpg')"
         alt="Człowiek i 'góra' kartonów"
       />
-      <label for="cartonWidth">Szerokość (cm) : </label>
-      <input id="cartonWidth" type="number" v-model.number="width" />
-      <br />
-      <label for="cartonHeight">Wysokość (cm) :</label>
-      <input id="cartonHeight" type="number" v-model.number="height" />
-      <br />
-      <label for="cartonDepth">Grubość (cm) : </label>
-      <input id="cartonDepth" type="number" v-model.number="depth" />
-      <br />
-      <label for="cartonWeight">Waga (kg) : </label>
-      <input id="cartonWeight" type="number" v-model.number="weight" />
+      <box-border title="wymiary kartonu">
+        <label for="cartonWidth">Szerokość (cm) : </label>
+        <input id="cartonWidth" type="number" v-model.number="width" />
+        <br />
+        <label for="cartonHeight">Wysokość (cm) :</label>
+        <input id="cartonHeight" type="number" v-model.number="height" />
+        <br />
+        <label for="cartonDepth">Grubość (cm) : </label>
+        <input id="cartonDepth" type="number" v-model.number="depth" />
+        <br />
+        <label for="cartonWeight">Waga (kg) : </label>
+        <input id="cartonWeight" type="number" v-model.number="weight" />
+      </box-border>
     </div>
     <div ref="segmentCarton3D" class="segmentBlock segment3D">
-      <Carton-3-d-component
+      <carton-3-d-component
         :width="width"
         :height="height"
         :depth="depth"
-      ></Carton-3-d-component>
+      ></carton-3-d-component>
     </div>
   </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
+import BoxBorder from "../BoxBorder.vue";
 import Carton3DComponent from "./Carton3DComponent.vue";
 
 export default {
   name: "ViewCreatePallet",
   components: {
     Carton3DComponent,
+    BoxBorder,
   },
   created() {
     // this.setWidthCarton(1);

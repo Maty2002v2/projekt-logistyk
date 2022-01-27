@@ -6,12 +6,16 @@
         :src="require('@/assets/businessman-g46770c33e_1280.jpg')"
         alt="Człowiek i 'góra' kartonów"
       />
-      <p>Ilość palet: {{ numberOfPallets }}</p>
-      <p>Ilość kartonów: {{ numberOfPallets * numberOfPackages }}</p>
-      <p>Waga palety: {{ weightOfWholePallet }} kg</p>
-      <p>Waga ładunku: {{ numberOfPallets * weightOfWholePallet }} kg</p>
-      <p>Maksymalna waga ładunku: {{ maxWeightSemitrailerFromStore }} kg</p>
-      <p>Maksymalna wysokość ładunku: {{ maxHeightSemitrailerFromStore }} cm</p>
+      <box-border>
+        <p>Ilość palet: {{ numberOfPallets }}</p>
+        <p>Ilość kartonów: {{ numberOfPallets * numberOfPackages }}</p>
+        <p>Waga palety: {{ weightOfWholePallet }} kg</p>
+        <p>Waga ładunku: {{ numberOfPallets * weightOfWholePallet }} kg</p>
+        <p>Maksymalna waga ładunku: {{ maxWeightSemitrailerFromStore }} kg</p>
+        <p>
+          Maksymalna wysokość ładunku: {{ maxHeightSemitrailerFromStore }} cm
+        </p>
+      </box-border>
     </div>
     <div ref="segmentSemitrailer3D" class="segmentBlock segment3D">
       <semitrailer-3-d-component
@@ -26,11 +30,12 @@
 
 <script>
 import { mapState } from "vuex";
+import BoxBorder from "../BoxBorder.vue";
 import Semitrailer3DComponent from "./Semitrailer3DComponent.vue";
 
 export default {
-  components: { Semitrailer3DComponent },
   name: "ViewCreateSemitrailer",
+  components: { Semitrailer3DComponent, BoxBorder },
   computed: {
     ...mapState({
       widthSemitrailerFromStore: (state) => state.semitrailerWidth, //pomyslec czy to ma sens

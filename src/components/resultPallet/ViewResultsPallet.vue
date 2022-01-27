@@ -6,20 +6,22 @@
         :src="require('@/assets/businessman-g46770c33e_1280.jpg')"
         alt="Człowiek i 'góra' kartonów"
       />
-      <p>Liczba warstw: {{ howManyFloors() }}</p>
-      <p>Liczba kartonów: {{ calculateNumberCartons }}</p>
-      <p>Wysokość: {{ calculateHeightWithoutPallet }} cm (bez palety)</p>
-      <p>Waga: {{ calculateWeightWithoutPallet }} kg (bez palety)</p>
-      <p>Wysokość: {{ calculateHeight }} cm (z paletą)</p>
-      <p>Waga: {{ calculateWeight }} kg (z paletą)</p>
-      <p>
-        Objętość jednego kartonu:
-        {{ calculateVolumeOfCarton }} cm<sup>3</sup>
-      </p>
-      <p>
-        Objętość jednej palety: {{ calculateVolumeOfPallet }} cm<sup>3</sup>
-        (wymiary palety razy wyśokość)
-      </p>
+      <box-border>
+        <p>Liczba warstw: {{ howManyFloors() }}</p>
+        <p>Liczba kartonów: {{ calculateNumberCartons }}</p>
+        <p>Wysokość: {{ calculateHeightWithoutPallet }} cm (bez palety)</p>
+        <p>Waga: {{ calculateWeightWithoutPallet }} kg (bez palety)</p>
+        <p>Wysokość: {{ calculateHeight }} cm (z paletą)</p>
+        <p>Waga: {{ calculateWeight }} kg (z paletą)</p>
+        <p>
+          Objętość jednego kartonu:
+          {{ calculateVolumeOfCarton }} cm<sup>3</sup>
+        </p>
+        <p>
+          Objętość jednej palety: {{ calculateVolumeOfPallet }} cm<sup>3</sup>
+          (wymiary palety razy wyśokość)
+        </p>
+      </box-border>
     </div>
     <div ref="segmentResultsPallet3D" class="segmentBlock segment3D">
       <result-3-d-component
@@ -38,12 +40,14 @@
 <script>
 //TODO: Ogarnąć by dla dotatkowych danych o różnyc danych wszystko dobrze liczyło
 import { mapState, mapMutations } from "vuex";
+import BoxBorder from "../BoxBorder.vue";
 import Result3DComponent from "./Result3DComponent.vue";
 
 export default {
   name: "ViewResultsPallet",
   components: {
     Result3DComponent,
+    BoxBorder,
   },
   data() {
     return {

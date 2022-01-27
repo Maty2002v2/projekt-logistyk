@@ -1,47 +1,64 @@
 .flex-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  height: 100%;
   overflow-x: hidden;
+  width: 100vw;
+  height: 100vh; /*100%*/
 }
+/* .col-25 {
+  flex: 25%;
+}
+.col-75 {
+  flex: 75%;
+} */
 .segmentBlock {
   width: 50%;
-  height: 100vh;
+  max-height: 100vh;
 }
 .segmentInformation {
   position: relative;
+  padding: 30px 0px;
   text-align: center;
 }
 .segment3D {
   background: white;
+  min-height: 50vh;
 }
 .segmentInformationImageBg {
   position: absolute;
+  z-index: -10000;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
   max-width: 150%;
-  height: 100%;
-
-  z-index: -10000;
+  height: 100vh;
+  transform: translate(-50%, -50%);
   object-fit: cover;
   opacity: 0.2;
 }
+/* input,
+select {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+} */
 
 @media only screen and (max-width: 800px) {
   .flex-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
   }
   .segmentBlock {
     width: 100%;
-    height: 70vh;
+    height: 100%;
   }
-  .segmentInformationImageBg {
-    height: 180%;
+}
+
+@media only screen and (max-height: 400px) {
+  .segmentInformationBorder {
+    max-height: 100%;
+    overflow: scroll;
   }
 }
