@@ -15,16 +15,17 @@
   text-align: center;
 }
 .segmentInformation::after {
-  content: "";
-  background-image: url("../assets/businessman-g46770c33e_1280.jpg");
-  background-size: cover;
   position: absolute;
+  z-index: -999;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+
+  content: "";
+  background-image: url("../assets/businessman-g46770c33e_1280.jpg");
+  background-size: cover;
   opacity: 0.3;
-  z-index: -999;
 }
 .segment3D {
   min-height: 50vh;

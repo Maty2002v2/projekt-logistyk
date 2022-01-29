@@ -53,10 +53,10 @@ div {
 }
 span {
   display: inline-block;
-  background: green;
   width: 5px;
   height: 5px;
   margin: 2px;
+  background: green;
   border-radius: 50%;
 }
 .navigation {
@@ -70,8 +70,8 @@ span {
   margin-top: 10px;
 }
 .active-dott {
-  transform: scale(2);
   margin: 2px 5px;
   background: chocolate;
+  transform: scale(2);
 }
 </style>
