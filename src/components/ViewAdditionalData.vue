@@ -1,16 +1,19 @@
 <template>
   <div class="segmentInformation">
-    <div>
+    <div style="max-width: 800px; margin: auto">
       <div>
         <h2>Dane do pił:</h2>
+
         <div>
-          <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
+          <span class="label-group">
+            <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
 
-          <br />
-
-          <input type="checkbox" id="levelY" v-model="whetherToSetHeight" />
-          <span v-if="whetherToSetHeight"> Tak</span>
-          <span v-else> Nie</span>
+            <span>
+              <input type="checkbox" id="levelY" v-model="whetherToSetHeight" />
+              <span v-if="whetherToSetHeight"> Tak</span>
+              <span v-else> Nie</span>
+            </span>
+          </span>
 
           <br />
 
@@ -21,23 +24,24 @@
             :disabled="!whetherToSetHeight"
           />
         </div>
-
         <br />
 
         <div>
-          <label for="whetherToSetMaxHeightPallet"
-            >Chcesz podać maksymalną wysokość pjł ? (cm)</label
-          >
+          <span class="label-group">
+            <label for="whetherToSetMaxHeightPallet"
+              >Chcesz podać maksymalną wysokość pjł ? (cm)</label
+            >
 
-          <br />
-
-          <input
-            type="checkbox"
-            id="whetherToSetMaxHeightPallet"
-            v-model="whetherToSetMaxHeightPallet"
-          />
-          <span v-if="whetherToSetMaxHeightPallet"> Tak</span>
-          <span v-else> Nie</span>
+            <span>
+              <input
+                type="checkbox"
+                id="whetherToSetMaxHeightPallet"
+                v-model="whetherToSetMaxHeightPallet"
+              />
+              <span v-if="whetherToSetMaxHeightPallet"> Tak</span>
+              <span v-else> Nie</span>
+            </span>
+          </span>
 
           <br />
 
@@ -47,24 +51,24 @@
             :disabled="!whetherToSetMaxHeightPallet"
           />
         </div>
-
         <br />
 
         <div>
-          <label for="whetherToSetMaxWeightPallet"
-            >Chcesz podać maksymalną wagę pjł ? (kg)</label
-          >
+          <span class="label-group">
+            <label for="whetherToSetMaxWeightPallet"
+              >Chcesz podać maksymalną wagę pjł ? (kg)</label
+            >
 
-          <br />
-
-          <input
-            type="checkbox"
-            id="whetherToSetMaxWeightPallet"
-            v-model="whetherToSetMaxWeightPallet"
-          />
-          <span v-if="whetherToSetMaxWeightPallet"> Tak</span>
-          <span v-else> Nie</span>
-
+            <span>
+              <input
+                type="checkbox"
+                id="whetherToSetMaxWeightPallet"
+                v-model="whetherToSetMaxWeightPallet"
+              />
+              <span v-if="whetherToSetMaxWeightPallet"> Tak</span>
+              <span v-else> Nie</span>
+            </span>
+          </span>
           <br />
 
           <input
@@ -75,43 +79,43 @@
           />
         </div>
       </div>
-    </div>
 
-    <div>
-      <h2>Dane naczepy:</h2>
+      <div>
+        <h2>Dane naczepy:</h2>
 
-      <label for="semitrailerDepth">Długość (cm) : </label>
-      <input
-        id="semitrailerDepth"
-        type="number"
-        value="225"
-        v-model.number="semitrailerDepth"
-      />
-      <br />
-      <label for="semitrailerWidth">Szerokość (cm) : </label>
-      <input
-        id="semitrailerWidth"
-        type="number"
-        value="1350"
-        v-model.number="semitrailerWidth"
-      />
-      <br />
-      <label for="semitrailerHeight">Wysokość (cm) : </label>
-      <input
-        id="semitrailerHeight"
-        type="number"
-        value="275"
-        v-model.number="semitrailerHeight"
-      />
-      <br />
-      <label for="semitrailerWeight">Waga (kg) : </label>
-      <input
-        id="semitrailerWeight"
-        type="number"
-        value="275"
-        v-model.number="semitrailerWeight"
-      />
-      <br />
+        <label for="semitrailerDepth">Długość (cm) : </label>
+        <input
+          id="semitrailerDepth"
+          type="number"
+          value="225"
+          v-model.number="semitrailerDepth"
+        />
+        <br />
+        <label for="semitrailerWidth">Szerokość (cm) : </label>
+        <input
+          id="semitrailerWidth"
+          type="number"
+          value="1350"
+          v-model.number="semitrailerWidth"
+        />
+        <br />
+        <label for="semitrailerHeight">Wysokość (cm) : </label>
+        <input
+          id="semitrailerHeight"
+          type="number"
+          value="275"
+          v-model.number="semitrailerHeight"
+        />
+        <br />
+        <label for="semitrailerWeight">Waga (kg) : </label>
+        <input
+          id="semitrailerWeight"
+          type="number"
+          value="275"
+          v-model.number="semitrailerWeight"
+        />
+        <br />
+      </div>
     </div>
   </div>
 </template>
