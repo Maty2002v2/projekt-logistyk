@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="navigation">
     <button @click="back()">(--</button>
     <button @click="next()">--)</button>
     <br />
@@ -58,6 +58,12 @@ span {
   height: 5px;
   margin: 2px;
   border-radius: 50%;
+}
+.navigation {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .dotts-wrapper {
   position: relative;

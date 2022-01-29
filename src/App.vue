@@ -2,7 +2,6 @@
   <div id="app">
     <component :is="is"></component>
     <navigation-component
-      class="navidation"
       @navigationEvent="navigationEvent"
     ></navigation-component>
   </div>
@@ -61,11 +60,5 @@ body {
   /* text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
-}
-.navidation {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 </style>
