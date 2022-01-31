@@ -6,9 +6,9 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     typePallet: 1,
-    widthCarton: 40,
-    heightCarton: 30,
-    depthCarton: 20, //20 60, 40 80
+    widthCarton: 1,
+    heightCarton: 1,
+    depthCarton: 1, //20 60, 40 80
     weightCarton: 15,
     levelY: 7,
     maxHeightPallet: 160,
@@ -21,7 +21,7 @@ const store = new Vuex.Store({
     semitrailerDepth: 275,
     semitrailerWeight: 500,
   },
-  //
+  
   mutations: {
     setTypePallet(state, payload) {
       state.typePallet = payload;

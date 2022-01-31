@@ -11,7 +11,7 @@
 import ViewAdditionalData from "./components/ViewAdditionalData";
 import ViewCreateCarton from "./components/carton/ViewCreateCarton";
 import ViewCreatePallet from "./components/pallet/ViewCreatePallet";
-import ViewResultsPallet from "./components/resultPallet/ViewResultsPallet.vue";
+import ViewResultsPallet from "./components/resultPallet/ViewResultsPallet";
 import ViewCreateSemitrailer from "./components/semitrailer/ViewCreateSemitrailer";
 import NavigationComponent from "./components/NavigationComponent";
 

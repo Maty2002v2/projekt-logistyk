@@ -37,9 +37,9 @@ export default {
     BoxBorder,
   },
   created() {
-    // this.setWidthCarton(1);
-    // this.setHeightCarton(1);
-    // this.setDepthCarton(1);
+    this.setWidthCarton(1);
+    this.setHeightCarton(1);
+    this.setDepthCarton(1);
   },
   computed: {
     width: {

@@ -6,7 +6,7 @@
 
         <div>
           <span class="label-group">
-            <label for="levelY">Chcesz podać konkretną liczbę pięter ? </label>
+            <label for="levelY">Chcesz zmienić liczbę pięter ? </label>
 
             <span>
               <input type="checkbox" id="levelY" v-model="whetherToSetHeight" />
@@ -29,7 +29,7 @@
         <div>
           <span class="label-group">
             <label for="whetherToSetMaxHeightPallet"
-              >Chcesz podać maksymalną wysokość pjł ? (cm)</label
+              >Chcesz zmienić maksymalną wysokość pjł ? (cm)</label
             >
 
             <span>
@@ -56,7 +56,7 @@
         <div>
           <span class="label-group">
             <label for="whetherToSetMaxWeightPallet"
-              >Chcesz podać maksymalną wagę pjł ? (kg)</label
+              >Chcesz zmienić maksymalną wagę pjł ? (kg)</label
             >
 
             <span>

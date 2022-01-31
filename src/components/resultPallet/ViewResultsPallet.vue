@@ -206,10 +206,10 @@ export default {
           }
         }
 
-        if (this.heightCarton * (i + 1) + 14.4 >= this.semitrailerHeight) {
-          flag = false;
-          break;
-        }
+        // if (this.heightCarton * (i + 1) + 14.4 >= this.semitrailerHeight) {
+        //   flag = false;
+        //   break;
+        // }
 
         i++;
       }
