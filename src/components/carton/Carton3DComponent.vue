@@ -30,7 +30,7 @@ export default {
 
     const geometry = new THREE.BoxGeometry(this.width, this.height, this.depth);
     const texture = new THREE.TextureLoader().load(
-      "http://localhost/texture/everytexture.com-stock-paper-texture-00042.jpg"
+      require("@/assets/everytexture.com-stock-paper-texture-00042.jpg")
     );
     const cube = new THREE.Mesh(
       geometry,
