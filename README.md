@@ -1,7 +1,5 @@
 # Logistyk
 
-## Przed uruchomieniem umieścić folder texture w htdocs (przejściowe)
-
 ## Project setup
 
 ```
@@ -16,10 +14,10 @@ npm run serve
 
 ## Co jest nie tak
 
-#### Piętrzenie jest zrobione na sztywno
-
-#### Brak obliczeń związanych z naczepą
-
 #### Pola formularzu nie są zabespieczone
 
 #### Brak historii jakie dane zostały wprowadzone (wymiary kartonu)
+
+#### W widoku wyboru palety nie ma textury
+
+#### Niektóre dane są brzydko zaokrąglane
