@@ -7,7 +7,7 @@
 }
 .segmentBlock {
   width: 50%;
-  max-height: 100vh;
+  /* max-height: 100vh; */
 }
 .segmentInformation {
   position: relative;
@@ -57,7 +57,7 @@ select {
   }
   .segmentBlock {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
   }
 }
 @media only screen and (max-width: 330px) {

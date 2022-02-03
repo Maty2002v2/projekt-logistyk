@@ -20,8 +20,12 @@ const store = new Vuex.Store({
     semitrailerHeight: 225,
     semitrailerDepth: 275,
     semitrailerWeight: 500,
+    oldValueWidth: null,
+    oldValueHeight: null,
+    oldValueDepth: null,
+    oldValueWeight: null,
   },
-  
+
   mutations: {
     setTypePallet(state, payload) {
       state.typePallet = payload;
@@ -67,6 +71,18 @@ const store = new Vuex.Store({
     },
     setSemitrailerWeight(state, payload) {
       state.semitrailerWeight = payload;
+    },
+    setOldValueWidth(state, payload) {
+      state.oldValueWidth = payload;
+    },
+    setOldValueHeight(state, payload) {
+      state.oldValueHeight = payload;
+    },
+    setOldValueDepth(state, payload) {
+      state.oldValueDepth = payload;
+    },
+    setOldValueWeight(state, payload) {
+      state.oldValueWeight = payload;
     },
   },
 });

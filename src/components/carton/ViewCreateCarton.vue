@@ -14,6 +14,18 @@
         <label for="cartonWeight">Waga (kg) : </label>
         <input id="cartonWeight" type="number" v-model.number="weight" />
       </box-border>
+      <box-border v-if="Boolean(oldValueWidth)" title="Poprzednie dane">
+        <p>Szerokość: {{ oldValueWidth }}</p>
+        <p>Wysokość: {{ oldValueHeight }}</p>
+        <p>Grubość: {{ oldValueDepth }}</p>
+        <p>Waga: {{ oldValueWeight }}</p>
+        <restore-button
+          :oldWidth="oldValueWidth"
+          :oldHeight="oldValueHeight"
+          :oldDepth="oldValueDepth"
+          :oldWeight="oldValueWeight"
+        ></restore-button>
+      </box-border>
     </div>
     <div ref="segmentCarton3D" class="segmentBlock segment3D">
       <carton-3-d-component
@@ -26,8 +38,9 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import BoxBorder from "../BoxBorder.vue";
+import RestoreButton from "../RestoreButton.vue";
 import Carton3DComponent from "./Carton3DComponent.vue";
 
 export default {
@@ -35,11 +48,18 @@ export default {
   components: {
     Carton3DComponent,
     BoxBorder,
+    RestoreButton,
   },
   created() {
     this.setWidthCarton(1);
     this.setHeightCarton(1);
     this.setDepthCarton(1);
+  },
+  destroyed() {
+    this.setOldValueWidth(this.width);
+    this.setOldValueHeight(this.height);
+    this.setOldValueDepth(this.depth);
+    this.setOldValueWeight(this.weight);
   },
   computed: {
     width: {
@@ -74,6 +94,13 @@ export default {
         this.setWeightCarton(value);
       },
     },
+
+    ...mapState({
+      oldValueWidth: (state) => state.oldValueWidth,
+      oldValueHeight: (state) => state.oldValueHeight,
+      oldValueDepth: (state) => state.oldValueDepth,
+      oldValueWeight: (state) => state.oldValueWeight,
+    }),
   },
   methods: {
     ...mapMutations([
@@ -81,6 +108,10 @@ export default {
       "setHeightCarton",
       "setDepthCarton",
       "setWeightCarton",
+      "setOldValueWidth",
+      "setOldValueHeight",
+      "setOldValueDepth",
+      "setOldValueWeight",
     ]),
   },
   watch: {
