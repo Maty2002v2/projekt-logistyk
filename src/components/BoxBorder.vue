@@ -1,6 +1,6 @@
 <template>
   <div class="borderBox">
-    <span>{{ title }}</span>
+    <span class="title">{{ title }}</span>
     <slot></slot>
   </div>
 </template>
@@ -45,7 +45,7 @@ export default {
 .borderBox:hover {
   transform: translateY(4px) rotate(0deg);
 }
-span {
+span.title {
   position: absolute;
   top: -27px;
   left: 10%;
@@ -58,7 +58,7 @@ span {
 }
 
 @media only screen and (max-width: 800px) {
-  span {
+  span.title {
     font-size: 15px;
   }
 }

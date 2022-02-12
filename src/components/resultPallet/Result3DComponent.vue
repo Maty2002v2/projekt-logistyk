@@ -35,7 +35,14 @@ export default {
 
     const Pallet =
       this.typePallet == 1 ? new SmallerPallet() : new LargePallet();
-
+    console.log(
+      this.widthCarton,
+      this.heightCarton,
+      this.depthCarton,
+      this.levelX,
+      this.levelY,
+      this.levelZ
+    );
     Pallet.cartonInitialization(
       this.widthCarton,
       this.heightCarton,

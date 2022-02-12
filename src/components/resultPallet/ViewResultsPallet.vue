@@ -8,14 +8,16 @@
         <p>Waga: {{ calculateWeightWithoutPallet }} kg (bez palety)</p>
         <p>Wysokość: {{ calculateHeight }} cm (z paletą)</p>
         <p>Waga: {{ calculateWeight }} kg (z paletą)</p>
-        <p>
-          Objętość jednego kartonu:
-          {{ calculateVolumeOfCarton }} cm<sup>3</sup>
-        </p>
-        <p>
-          Objętość jednej palety: {{ calculateVolumeOfPallet }} cm<sup>3</sup>
-          (wymiary palety razy wyśokość)
-        </p>
+        <span v-if="calculateNumberCartons">
+          <p>
+            Objętość jednego kartonu:
+            {{ calculateVolumeOfCarton }} cm<sup>3</sup>
+          </p>
+          <p>
+            Objętość jednej palety: {{ calculateVolumeOfPallet }} cm<sup>3</sup>
+            (wymiary palety razy wyśokość)
+          </p>
+        </span>
       </box-border>
     </div>
     <div ref="segmentResultsPallet3D" class="segmentBlock segment3D">
@@ -174,6 +176,7 @@ export default {
       maxWeightPallet: (state) => state.maxWeightPallet,
       maxHeightPallet: (state) => state.maxHeightPallet,
       semitrailerHeight: (state) => state.semitrailerHeight,
+      semitrailerWeight: (state) => state.semitrailerWeight,
     }),
   },
   methods: {
@@ -207,6 +210,14 @@ export default {
         }
 
         if (this.heightCarton * (i + 1) + 14.4 >= this.semitrailerHeight) {
+          flag = false;
+          break;
+        }
+
+        if (
+          this.calculateWeightOfFloor * (i + 1) + 25 >=
+          this.semitrailerWeight
+        ) {
           flag = false;
           break;
         }
