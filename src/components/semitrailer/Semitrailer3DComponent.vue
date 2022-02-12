@@ -203,7 +203,9 @@ export default {
     },
     palletInitialization() {
       const Pallet =
-        this.typePallet == 1 ? new SmallerPallet() : new LargePallet();
+        this.typePallet == 1
+          ? new SmallerPallet(false)
+          : new LargePallet(false);
 
       /*Flaga informująca po którym boku palety chcemy je rozmieścić (czy po dłuższym (2) czy krótszym (1)) */
       let whichPossibility = 2;
@@ -264,8 +266,8 @@ export default {
               if (this.ifPalletsAreTooHeavy) {
                 let palletCenterPoint =
                   this.typePallet == 1
-                    ? new SmallerPallet().centerPoint
-                    : new LargePallet().centerPoint;
+                    ? new SmallerPallet(false).centerPoint
+                    : new LargePallet(false).centerPoint;
                 palletCenterPoint.rotation.y = Math.PI / 2;
                 this.pallets.add(palletCenterPoint);
                 palletCenterPoint.position.set(
@@ -301,8 +303,8 @@ export default {
               if (this.ifPalletsAreTooHeavy) {
                 let palletCenterPoint =
                   this.typePallet == 1
-                    ? new SmallerPallet().centerPoint
-                    : new LargePallet().centerPoint;
+                    ? new SmallerPallet(false).centerPoint
+                    : new LargePallet(false).centerPoint;
                 // pallet.rotation.y = Math.PI / 2;
                 this.pallets.add(palletCenterPoint);
                 palletCenterPoint.position.set(

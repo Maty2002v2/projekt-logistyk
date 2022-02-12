@@ -6,8 +6,8 @@ class LargePallet extends Pallet {
   height = 14.4;
   weight = 25;
 
-  constructor() {
-    super();
+  constructor(loadTexture) {
+    super(loadTexture);
     this.createPallet();
   }
 
