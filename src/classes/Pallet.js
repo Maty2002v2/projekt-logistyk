@@ -46,7 +46,6 @@ class Pallet {
       ),
     });
     const noTexture = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    console.log(this.#loadTexture);
     const mesh = new THREE.Mesh(
       boardGeo,
       this.#loadTexture ? texture : noTexture

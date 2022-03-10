@@ -54,7 +54,11 @@ export default {
     const light3 = new THREE.PointLight(0xffffff, 1);
 
     const Semitrailer = new semitrailer();
-    Semitrailer.go(this.widthSemitrailer, this.depthSemitrailer, 1);
+    Semitrailer.go(
+      this.widthSemitrailer,
+      this.depthSemitrailer,
+      this.heightSemitrailer
+    );
 
     const pallets = new THREE.Object3D();
 
@@ -89,7 +93,7 @@ export default {
 
     this.semitrailer.rotation.x += 0.4;
 
-    this.pallets.position.set(0, 3, 0);
+    this.pallets.position.set(0, (this.heightSemitrailer / 2) * -1, 0);
     // this.pallet.rotation.y = Math.PI / 2;
 
     this.palletInitialization();
