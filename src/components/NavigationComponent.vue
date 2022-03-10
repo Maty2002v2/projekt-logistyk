@@ -56,7 +56,7 @@ span {
   width: 5px;
   height: 5px;
   margin: 2px;
-  background: green;
+  background: #6e7491;
   border-radius: 50%;
 }
 .navigation {
@@ -71,7 +71,7 @@ span {
 }
 .active-dott {
   margin: 2px 5px;
-  background: chocolate;
+  background: #495074;
   transform: scale(2);
 }
 </style>
