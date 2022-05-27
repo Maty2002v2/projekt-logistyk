@@ -113,6 +113,9 @@ export default {
     this.carton.height = this.heightCarton;
     this.levels.y = this.howManyFloors();
 
+    this.setLevelX(this.levels.x);
+    this.setLevelZ(this.levels.z);
+
     // console.log(
     //   this.carton.width,
     //   this.carton.height,
@@ -239,7 +242,12 @@ export default {
       }
     },
 
-    ...mapMutations(["setNumberOfPackages", "setWeightOfWholePallet"]),
+    ...mapMutations([
+      "setNumberOfPackages",
+      "setWeightOfWholePallet",
+      "setLevelX",
+      "setLevelZ",
+    ]),
   },
 };
 </script>

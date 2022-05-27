@@ -11,6 +11,8 @@ const store = new Vuex.Store({
     depthCarton: 1, //20 60, 40 80
     weightCarton: 15,
     levelY: 7,
+    levelX: 0,
+    levelZ: 0,
     maxHeightPallet: 160,
     maxWeightPallet: 730,
     weightOfWholePallet: 25,
@@ -44,6 +46,12 @@ const store = new Vuex.Store({
     },
     setLevelY(state, payload) {
       state.levelY = payload;
+    },
+    setLevelX(state, payload) {
+      state.levelX = payload;
+    },
+    setLevelZ(state, payload) {
+      state.levelZ = payload;
     },
     setMaxWeightPallet(state, payload) {
       state.maxWeightPallet = payload;
