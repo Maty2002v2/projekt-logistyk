@@ -211,6 +211,8 @@ export default {
           ? new SmallerPallet(false)
           : new LargePallet(false);
 
+      Pallet.cartonInitialization();
+
       /*Flaga informująca po którym boku palety chcemy je rozmieścić (czy po dłuższym (2) czy krótszym (1)) */
       let whichPossibility = 2;
 

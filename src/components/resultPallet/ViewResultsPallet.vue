@@ -55,7 +55,7 @@ export default {
       },
       levels: {
         x: null,
-        y: 3,
+        y: null, //zmienilem z 3 2022
         z: null,
       },
       pallet: {
