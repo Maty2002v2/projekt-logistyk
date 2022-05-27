@@ -6,10 +6,14 @@
 
         <div>
           <span class="label-group">
-            <label for="levelY">Chcesz zmienić liczbę pięter ? </label>
+            <label for="maxNumberFloors">Chcesz zmienić liczbę pięter ? </label>
 
             <span>
-              <input type="checkbox" id="levelY" v-model="whetherToSetHeight" />
+              <input
+                type="checkbox"
+                id="maxNumberFloors"
+                v-model="whetherToSetHeight"
+              />
               <span v-if="whetherToSetHeight"> Tak</span>
               <span v-else> Nie</span>
             </span>
@@ -19,8 +23,8 @@
 
           <input
             type="number"
-            id="levelY"
-            v-model.number="levelY"
+            id="maxNumberFloors"
+            v-model.number="maxNumberFloors"
             :disabled="!whetherToSetHeight"
           />
         </div>
@@ -137,12 +141,12 @@ export default {
     };
   },
   computed: {
-    levelY: {
+    maxNumberFloors: {
       get() {
-        return this.$store.state.levelY;
+        return this.$store.state.maxNumberFloors;
       },
       set(value) {
-        this.setLevelY(value);
+        this.setMaxNumberFloors(value);
       },
     },
     maxWeightPallet: {
@@ -196,7 +200,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      "setLevelY",
+      "setMaxNumberFloors",
       "setMaxWeightPallet",
       "setMaxHeightPallet",
       "setSemitrailerWidth",

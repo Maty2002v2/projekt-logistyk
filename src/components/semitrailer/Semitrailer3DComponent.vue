@@ -163,6 +163,12 @@ export default {
     ...mapState({
       typePallet: (state) => state.typePallet,
       weightOfWholePallet: (state) => state.weightOfWholePallet,
+      levelY: (state) => state.levelY,
+      levelX: (state) => state.levelX,
+      levelZ: (state) => state.levelZ,
+      widthCarton: (state) => state.widthCarton,
+      heightCarton: (state) => state.heightCarton,
+      depthCarton: (state) => state.depthCarton,
     }),
   },
   methods: {
@@ -210,8 +216,6 @@ export default {
         this.typePallet == 1
           ? new SmallerPallet(false)
           : new LargePallet(false);
-
-      Pallet.cartonInitialization();
 
       /*Flaga informująca po którym boku palety chcemy je rozmieścić (czy po dłuższym (2) czy krótszym (1)) */
       let whichPossibility = 2;
@@ -270,10 +274,22 @@ export default {
               x += Pallet.depth
             ) {
               if (this.ifPalletsAreTooHeavy) {
-                let palletCenterPoint =
+                let pallet =
                   this.typePallet == 1
-                    ? new SmallerPallet(false).centerPoint
-                    : new LargePallet(false).centerPoint;
+                    ? new SmallerPallet(false)
+                    : new LargePallet(false);
+
+                pallet.cartonInitialization(
+                  this.widthCarton,
+                  this.heightCarton,
+                  this.depthCarton,
+                  this.levelX,
+                  this.levelY,
+                  this.levelZ
+                );
+
+                let palletCenterPoint = pallet.centerPoint;
+
                 palletCenterPoint.rotation.y = Math.PI / 2;
                 this.pallets.add(palletCenterPoint);
                 palletCenterPoint.position.set(
@@ -307,10 +323,22 @@ export default {
               x += Pallet.depth
             ) {
               if (this.ifPalletsAreTooHeavy) {
-                let palletCenterPoint =
+                let pallet =
                   this.typePallet == 1
-                    ? new SmallerPallet(false).centerPoint
-                    : new LargePallet(false).centerPoint;
+                    ? new SmallerPallet(false)
+                    : new LargePallet(false);
+
+                pallet.cartonInitialization(
+                  this.widthCarton,
+                  this.heightCarton,
+                  this.depthCarton,
+                  this.levelX,
+                  this.levelY,
+                  this.levelZ
+                );
+
+                let palletCenterPoint = pallet.centerPoint;
+
                 // pallet.rotation.y = Math.PI / 2;
                 this.pallets.add(palletCenterPoint);
                 palletCenterPoint.position.set(

@@ -114,6 +114,7 @@ export default {
     this.levels.y = this.howManyFloors();
 
     this.setLevelX(this.levels.x);
+    this.setLevelY(this.levels.y);
     this.setLevelZ(this.levels.z);
 
     // console.log(
@@ -175,7 +176,7 @@ export default {
       heightCarton: (state) => state.heightCarton,
       depthCarton: (state) => state.depthCarton,
       weightCarton: (state) => state.weightCarton,
-      levelY: (state) => state.levelY,
+      maxNumberFloors: (state) => state.maxNumberFloors,
       maxWeightPallet: (state) => state.maxWeightPallet,
       maxHeightPallet: (state) => state.maxHeightPallet,
       semitrailerHeight: (state) => state.semitrailerHeight,
@@ -205,8 +206,8 @@ export default {
           }
         }
 
-        if (this.levelY > 0) {
-          if (i >= this.levelY) {
+        if (this.maxNumberFloors > 0) {
+          if (i >= this.maxNumberFloors) {
             flag = false;
             break;
           }
@@ -246,6 +247,7 @@ export default {
       "setNumberOfPackages",
       "setWeightOfWholePallet",
       "setLevelX",
+      "setLevelY",
       "setLevelZ",
     ]),
   },
