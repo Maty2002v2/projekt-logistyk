@@ -4,7 +4,7 @@
       <box-border title="wybór palety">
         <select v-model.number="typePallet">
           <option value="1">Euro (1200x800x144)</option>
-          <option value="2">Inna (1200x100x144)</option>
+          <option value="2">Inna (1200x1000x144)</option>
         </select>
       </box-border>
     </div>
