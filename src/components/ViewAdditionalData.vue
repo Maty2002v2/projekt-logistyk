@@ -2,7 +2,7 @@
   <div class="segmentInformation">
     <div style="max-width: 800px; margin: auto">
       <div>
-        <h2>Dane do pił:</h2>
+        <h2>Dane do pjł:</h2>
 
         <div>
           <span class="label-group">
