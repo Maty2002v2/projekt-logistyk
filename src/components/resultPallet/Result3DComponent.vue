@@ -34,7 +34,7 @@ export default {
     const light4 = new THREE.PointLight(0xffffff, 2);
 
     const Pallet =
-      this.typePallet == 1 ? new SmallerPallet(false) : new LargePallet(false);
+      this.typePallet == 1 ? new SmallerPallet() : new LargePallet();
     console.log(
       this.widthCarton,
       this.heightCarton,

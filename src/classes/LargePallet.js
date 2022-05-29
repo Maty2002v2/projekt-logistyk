@@ -48,7 +48,7 @@ class LargePallet extends Pallet {
       for (let z = 0; z < d * lz; z += d) {
         for (let x = 0; x < w * lx; x += w) {
           for (let y = 12 + h / 2; y - 12 <= h * ly; y += h) {
-            this.createBlock(
+            this.createCarton(
               w,
               h,
               d,
@@ -82,7 +82,7 @@ class LargePallet extends Pallet {
               continue;
             }
 
-            this.createBlock(
+            this.createCarton(
               w,
               h,
               d,

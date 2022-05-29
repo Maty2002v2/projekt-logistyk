@@ -213,9 +213,7 @@ export default {
     },
     palletInitialization() {
       const Pallet =
-        this.typePallet == 1
-          ? new SmallerPallet(false)
-          : new LargePallet(false);
+        this.typePallet == 1 ? new SmallerPallet() : new LargePallet();
 
       /*Flaga informująca po którym boku palety chcemy je rozmieścić (czy po dłuższym (2) czy krótszym (1)) */
       let whichPossibility = 2;
@@ -276,8 +274,8 @@ export default {
               if (this.ifPalletsAreTooHeavy) {
                 let pallet =
                   this.typePallet == 1
-                    ? new SmallerPallet(false)
-                    : new LargePallet(false);
+                    ? new SmallerPallet()
+                    : new LargePallet();
 
                 pallet.cartonInitialization(
                   this.widthCarton,
@@ -325,8 +323,8 @@ export default {
               if (this.ifPalletsAreTooHeavy) {
                 let pallet =
                   this.typePallet == 1
-                    ? new SmallerPallet(false)
-                    : new LargePallet(false);
+                    ? new SmallerPallet()
+                    : new LargePallet();
 
                 pallet.cartonInitialization(
                   this.widthCarton,

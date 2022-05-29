@@ -2,14 +2,14 @@ import * as THREE from "three";
 
 class Pallet {
   centerPoint;
-  #loadTexture;
+  #loadPalletTexture;
 
-  constructor(loadTexture = true) {
-    this.#loadTexture = loadTexture;
+  constructor(loadPalletTexture = true) {
+    this.#loadPalletTexture = loadPalletTexture;
     this.centerPoint = new THREE.Object3D();
   }
 
-  createBlock(w = 1, h = 1, d = 1, x, y, z) {
+  createCarton(w = 1, h = 1, d = 1, x, y, z) {
     const blockBox = new THREE.BoxBufferGeometry(w, h, d);
 
     // const texture = new THREE.TextureLoader().load(
@@ -18,7 +18,7 @@ class Pallet {
 
     const block = new THREE.Mesh(
       blockBox,
-      new THREE.MeshBasicMaterial({ color: 0x000ff0 })
+      new THREE.MeshBasicMaterial({ color: 0xcc6633 })
       // new THREE.MeshStandardMaterial({ map: texture })
     );
 
@@ -48,7 +48,7 @@ class Pallet {
     const noTexture = new THREE.MeshBasicMaterial({ color: 0xff0000 });
     const mesh = new THREE.Mesh(
       boardGeo,
-      this.#loadTexture ? texture : noTexture
+      this.#loadPalletTexture ? texture : noTexture
     );
 
     return mesh;
