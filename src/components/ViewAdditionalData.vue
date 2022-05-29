@@ -111,7 +111,7 @@
           v-model.number="semitrailerHeight"
         />
         <br />
-        <label for="semitrailerWeight">Waga (kg) : </label>
+        <label for="semitrailerWeight">Maksymalna waga (kg) : </label>
         <input
           id="semitrailerWeight"
           type="number"
