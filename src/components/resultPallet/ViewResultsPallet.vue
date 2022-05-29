@@ -133,11 +133,15 @@ export default {
   },
   computed: {
     calculateHeight() {
-      return this.pallet.height + this.howManyFloors() * this.carton.height;
+      return (
+        Math.ceil(
+          (this.pallet.height + this.howManyFloors() * this.carton.height) * 100
+        ) / 100
+      );
     },
 
     calculateHeightWithoutPallet() {
-      return this.calculateHeight - this.pallet.height;
+      return Math.ceil((this.calculateHeight - this.pallet.height) * 100) / 100;
     },
 
     calculateNumberCartons() {
