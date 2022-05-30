@@ -45,7 +45,7 @@ class Pallet {
         require("@/assets/Wood_Pattern_001_basecolor.jpg")
       ),
     });
-    const noTexture = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const noTexture = new THREE.MeshBasicMaterial({ color: 0xa34200 });
     const mesh = new THREE.Mesh(
       boardGeo,
       this.#loadPalletTexture ? texture : noTexture
