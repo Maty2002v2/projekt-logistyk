@@ -1,3 +1,7 @@
+* {
+  font-family: Courgette, Helvetica, Arial, sans-serif;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -11,7 +15,7 @@
 }
 .segmentInformation {
   position: relative;
-  padding: 3px 0px 70px 0px; /*30 0*/
+  padding: 3px 0px 80px 0px; /*30 0*/
   text-align: center;
 }
 .segmentInformation::after {

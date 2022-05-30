@@ -1,7 +1,7 @@
 <template>
   <div class="navigation">
-    <button @click="back()">(--</button>
-    <button @click="next()">--)</button>
+    <button @click="back()" class="navigationButton">🡸</button>
+    <button @click="next()" class="navigationButton">🡺</button>
     <br />
     <div class="dotts-wrapper">
       <span class="dott"></span>
@@ -65,9 +65,25 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.navigationButton {
+  display: inline-block;
+  border: none;
+  padding: 4px 10px;
+  margin: 0 3px;
+  background: #57649c;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.1s all linear;
+}
+.navigationButton:active {
+  transform: scale(0.8);
+}
 .dotts-wrapper {
   position: relative;
   margin-top: 10px;
+}
+.dott {
+  transition: 0.1s all ease-in;
 }
 .active-dott {
   margin: 2px 5px;
