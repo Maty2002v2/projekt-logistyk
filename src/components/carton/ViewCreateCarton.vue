@@ -27,7 +27,15 @@
         ></restore-button>
       </box-border>
     </div>
-    <div ref="segmentCarton3D" class="segmentBlock segment3D">
+    <div
+      ref="segmentCarton3D"
+      style="position: relative"
+      class="segmentBlock segment3D"
+    >
+      <tooltip-component
+        message="Scrollem można oddalić lub przybliżyć podgląd"
+        style="position: absolute; top: 30px; right: 60px"
+      ></tooltip-component>
       <carton-3-d-component
         :width="width"
         :height="height"
@@ -41,6 +49,7 @@
 import { mapState, mapMutations } from "vuex";
 import BoxBorder from "../BoxBorder.vue";
 import RestoreButton from "../RestoreButton.vue";
+import TooltipComponent from "../TooltipComponent.vue";
 import Carton3DComponent from "./Carton3DComponent.vue";
 
 export default {
@@ -49,6 +58,7 @@ export default {
     Carton3DComponent,
     BoxBorder,
     RestoreButton,
+    TooltipComponent,
   },
   created() {
     this.setWidthCarton(1);
