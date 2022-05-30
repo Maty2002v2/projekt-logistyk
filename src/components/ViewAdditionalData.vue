@@ -120,6 +120,18 @@
         />
         <br />
       </div>
+
+      <div>
+        <h2>Dodatkowe opcje:</h2>
+
+        <div>
+          <h3>Włączyć textury:</h3>
+          <label class="switch">
+            <input type="checkbox" v-model="loadTexture" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -197,6 +209,14 @@ export default {
         this.setSemitrailerWeight(value);
       },
     },
+    loadTexture: {
+      get() {
+        return this.$store.state.loadTexture;
+      },
+      set(value) {
+        this.setLoadTexture(value);
+      },
+    },
   },
   methods: {
     ...mapMutations([
@@ -207,6 +227,7 @@ export default {
       "setSemitrailerHeight",
       "setSemitrailerDepth",
       "setSemitrailerWeight",
+      "setLoadTexture",
     ]),
   },
 };

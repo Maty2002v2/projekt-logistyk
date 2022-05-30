@@ -38,6 +38,9 @@ export default {
     convert: {
       type: Number,
     },
+    loadTexture: {
+      type: Boolean,
+    },
   },
   data() {
     const scene = new THREE.Scene();
@@ -274,8 +277,8 @@ export default {
               if (this.ifPalletsAreTooHeavy) {
                 let pallet =
                   this.typePallet == 1
-                    ? new SmallerPallet()
-                    : new LargePallet();
+                    ? new SmallerPallet(this.loadTexture)
+                    : new LargePallet(this.loadTexture);
 
                 pallet.cartonInitialization(
                   this.widthCarton,
@@ -323,8 +326,8 @@ export default {
               if (this.ifPalletsAreTooHeavy) {
                 let pallet =
                   this.typePallet == 1
-                    ? new SmallerPallet()
-                    : new LargePallet();
+                    ? new SmallerPallet(this.loadTexture)
+                    : new LargePallet(this.loadTexture);
 
                 pallet.cartonInitialization(
                   this.widthCarton,

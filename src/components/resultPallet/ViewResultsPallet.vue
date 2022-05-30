@@ -29,6 +29,7 @@
         :levelX="levels.x"
         :levelY="levels.y"
         :levelZ="levels.z"
+        :loadTexture="loadTexture"
       ></result-3-d-component>
     </div>
   </div>
@@ -185,6 +186,7 @@ export default {
       maxHeightPallet: (state) => state.maxHeightPallet,
       semitrailerHeight: (state) => state.semitrailerHeight,
       semitrailerWeight: (state) => state.semitrailerWeight,
+      loadTexture: (state) => state.loadTexture,
     }),
   },
   methods: {

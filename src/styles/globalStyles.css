@@ -11,7 +11,7 @@
 }
 .segmentInformation {
   position: relative;
-  padding: 30px 0px;
+  padding: 3px 0px 70px 0px; /*30 0*/
   text-align: center;
 }
 .segmentInformation::after {

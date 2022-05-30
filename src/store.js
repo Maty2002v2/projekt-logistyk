@@ -27,6 +27,7 @@ const store = new Vuex.Store({
     oldValueHeight: null,
     oldValueDepth: null,
     oldValueWeight: null,
+    loadTexture: false,
   },
 
   mutations: {
@@ -95,6 +96,9 @@ const store = new Vuex.Store({
     },
     setOldValueWeight(state, payload) {
       state.oldValueWeight = payload;
+    },
+    setLoadTexture(state, payload) {
+      state.loadTexture = payload;
     },
   },
 });

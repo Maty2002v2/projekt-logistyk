@@ -18,6 +18,7 @@
         :heightSemitrailer="heightSemitrailerFromStore"
         :depthSemitrailer="depthSemitrailerFromStore"
         :maxWeightSemitrailer="maxWeightSemitrailerFromStore"
+        :loadTexture="loadTexture"
       ></semitrailer-3-d-component>
     </div>
   </div>
@@ -41,6 +42,7 @@ export default {
       numberOfPackages: (state) => state.numberOfPackages,
       numberOfPallets: (state) => state.numberOfPallets,
       weightOfWholePallet: (state) => state.weightOfWholePallet,
+      loadTexture: (state) => state.loadTexture,
     }),
   },
 };

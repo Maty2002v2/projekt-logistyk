@@ -17,6 +17,7 @@ export default {
     levelX: Number,
     levelY: Number,
     levelZ: Number,
+    loadTexture: Boolean,
   },
   data() {
     const scene = new THREE.Scene();
@@ -34,15 +35,10 @@ export default {
     const light4 = new THREE.PointLight(0xffffff, 2);
 
     const Pallet =
-      this.typePallet == 1 ? new SmallerPallet() : new LargePallet();
-    console.log(
-      this.widthCarton,
-      this.heightCarton,
-      this.depthCarton,
-      this.levelX,
-      this.levelY,
-      this.levelZ
-    );
+      this.typePallet == 1
+        ? new SmallerPallet(this.loadTexture)
+        : new LargePallet(this.loadTexture);
+
     Pallet.cartonInitialization(
       this.widthCarton,
       this.heightCarton,

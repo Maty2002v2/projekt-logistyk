@@ -16,6 +16,7 @@ import ViewCreateSemitrailer from "./components/semitrailer/ViewCreateSemitraile
 import NavigationComponent from "./components/NavigationComponent";
 
 import "@/styles/globalStyles.css";
+import "@/styles/switchButton.css";
 
 export default {
   name: "App",

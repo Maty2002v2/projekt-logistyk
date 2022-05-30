@@ -61,7 +61,7 @@ span {
 }
 .navigation {
   position: fixed;
-  bottom: 0;
+  bottom: -20px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
