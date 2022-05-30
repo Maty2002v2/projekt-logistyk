@@ -91,9 +91,9 @@ export default {
       //   this.lastScroll = window.scrollY;
 
       if (e.deltaY > 0) {
-        this.camera.position.set(0, 0, this.camera.position.z - 1);
-      } else {
         this.camera.position.set(0, 0, this.camera.position.z + 1);
+      } else {
+        this.camera.position.set(0, 0, this.camera.position.z - 1);
       }
       //   this.camera.position.set(0, 0, this.camera.position.z - 1);
       this.renderer.render(this.scene, this.camera);
