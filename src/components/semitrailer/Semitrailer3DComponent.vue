@@ -6,7 +6,7 @@
 
 <script>
 import * as THREE from "three";
-import { mapState, mapMutations } from "vuex";
+import { mapMutations } from "vuex";
 import semitrailer from "../../classes/Semitrailer.js";
 import LargePallet from "../../classes/LargePallet"; //1200x800x144 25
 import SmallerPallet from "../../classes/SmallerPallet"; //1200x1000x144 25
@@ -36,6 +36,30 @@ export default {
       default: 225,
     },
     convert: {
+      type: Number,
+    },
+    typePallet: {
+      type: Number,
+    },
+    weightOfWholePallet: {
+      type: Number,
+    },
+    levelY: {
+      type: Number,
+    },
+    levelX: {
+      type: Number,
+    },
+    levelZ: {
+      type: Number,
+    },
+    widthCarton: {
+      type: Number,
+    },
+    heightCarton: {
+      type: Number,
+    },
+    depthCarton: {
       type: Number,
     },
     loadTexture: {
@@ -162,17 +186,6 @@ export default {
         this.maxWeightSemitrailer
       );
     },
-
-    ...mapState({
-      typePallet: (state) => state.typePallet,
-      weightOfWholePallet: (state) => state.weightOfWholePallet,
-      levelY: (state) => state.levelY,
-      levelX: (state) => state.levelX,
-      levelZ: (state) => state.levelZ,
-      widthCarton: (state) => state.widthCarton,
-      heightCarton: (state) => state.heightCarton,
-      depthCarton: (state) => state.depthCarton,
-    }),
   },
   methods: {
     animate() {
