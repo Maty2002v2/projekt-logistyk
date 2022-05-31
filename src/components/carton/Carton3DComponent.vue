@@ -15,36 +15,36 @@ export default {
     depth: Number,
   },
   data() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
+    const SCENE = new THREE.Scene();
+    const CAMERA = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / 2 / window.innerHeight,
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const RENDERER = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-    const light1 = new THREE.PointLight(0xffffff, 1);
-    const light2 = new THREE.PointLight(0xffffff, 1);
-    const light3 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT1 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT2 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT3 = new THREE.PointLight(0xffffff, 1);
 
-    const geometry = new THREE.BoxGeometry(this.width, this.height, this.depth);
-    const texture = new THREE.TextureLoader().load(
+    const GEOMETRY = new THREE.BoxGeometry(this.width, this.height, this.depth);
+    const TEXTURE = new THREE.TextureLoader().load(
       require("@/assets/everytexture.com-stock-paper-texture-00042.jpg")
     );
-    const cube = new THREE.Mesh(
-      geometry,
-      new THREE.MeshStandardMaterial({ map: texture })
+    const CUBE = new THREE.Mesh(
+      GEOMETRY,
+      new THREE.MeshStandardMaterial({ map: TEXTURE })
     );
 
     return {
-      scene: scene,
-      camera: camera,
-      renderer: renderer,
-      light1: light1,
-      light2: light2,
-      light3: light3,
-      cube: cube,
+      scene: SCENE,
+      camera: CAMERA,
+      renderer: RENDERER,
+      light1: LIGHT1,
+      light2: LIGHT2,
+      light3: LIGHT3,
+      cube: CUBE,
       lastScroll: 0,
     };
   },
@@ -87,15 +87,11 @@ export default {
       this.renderer.render(this.scene, this.camera);
     },
     perspectiveSeeing(e) {
-      //   const diff = window.scrollY - this.lastScroll;
-      //   this.lastScroll = window.scrollY;
-
       if (e.deltaY > 0) {
         this.camera.position.set(0, 0, this.camera.position.z + 1);
       } else {
         this.camera.position.set(0, 0, this.camera.position.z - 1);
       }
-      //   this.camera.position.set(0, 0, this.camera.position.z - 1);
       this.renderer.render(this.scene, this.camera);
     },
     update() {
@@ -130,7 +126,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

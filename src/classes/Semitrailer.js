@@ -8,21 +8,14 @@ class Semitrailer {
   }
 
   go(w = 1, d = 1, h = 1) {
-    const blockBox = new THREE.BoxBufferGeometry(w, h, d);
-    // const material = new THREE.MeshBasicMaterial({
-    //   color: 0x00ff00,
-    //   transparent: true,
-    //   opacity: 0.5,
-    // });
-    // const cube = new THREE.Mesh(blockBox, material);
-
-    const edges = new THREE.EdgesGeometry(blockBox);
-    const line = new THREE.LineSegments(
-      edges,
+    const BLOCK_BOX = new THREE.BoxBufferGeometry(w, h, d);
+    const EDGES = new THREE.EdgesGeometry(BLOCK_BOX);
+    const LINE = new THREE.LineSegments(
+      EDGES,
       new THREE.LineBasicMaterial({ color: 0x000000 })
     );
 
-    this.centerPoint.add(line);
+    this.centerPoint.add(LINE);
   }
 }
 

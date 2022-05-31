@@ -13,31 +13,31 @@ export default {
     typePallet: Number,
   },
   data() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
+    const SCENE = new THREE.Scene();
+    const CAMERA = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / 2 / window.innerHeight,
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const RENDERER = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-    const light1 = new THREE.PointLight(0xffffff, 1);
-    const light2 = new THREE.PointLight(0xffffff, 1);
-    const light3 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT1 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT2 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT3 = new THREE.PointLight(0xffffff, 1);
 
-    const smallerPallet = new SmallerPallet();
-    const largePallet = new LargePallet();
+    const SMALLER_PALLET = new SmallerPallet();
+    const LARGE_PALLET = new LargePallet();
 
     return {
-      scene: scene,
-      camera: camera,
-      renderer: renderer,
-      light1: light1,
-      light2: light2,
-      light3: light3,
-      smallerPallet: smallerPallet.centerPoint,
-      largePallet: largePallet.centerPoint,
+      scene: SCENE,
+      camera: CAMERA,
+      renderer: RENDERER,
+      light1: LIGHT1,
+      light2: LIGHT2,
+      light3: LIGHT3,
+      smallerPallet: SMALLER_PALLET.centerPoint,
+      largePallet: LARGE_PALLET.centerPoint,
       lastScroll: 0,
     };
   },

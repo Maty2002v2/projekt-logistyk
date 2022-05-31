@@ -36,7 +36,6 @@
 </template>
 
 <script>
-//TODO: Ogarnąć by dla dotatkowych danych o różnyc danych wszystko dobrze liczyło
 import { mapState, mapMutations } from "vuex";
 import BoxBorder from "../BoxBorder.vue";
 import Result3DComponent from "./Result3DComponent.vue";
@@ -56,7 +55,7 @@ export default {
       },
       levels: {
         x: null,
-        y: null, //zmienilem z 3 2022
+        y: null,
         z: null,
       },
       pallet: {
@@ -76,30 +75,12 @@ export default {
       Math.floor(this.pallet.width / this.widthCarton) *
       Math.floor(this.pallet.depth / this.depthCarton);
 
-    // console.log(
-    //   firstPossibility,
-    //   secoundPossibility,
-    //   firstPossibility > secoundPossibility
-    // );
-
     if (firstPossibility < secoundPossibility) {
       this.carton.width = this.widthCarton;
       this.carton.depth = this.depthCarton;
 
       this.levels.x = Math.floor(this.pallet.width / this.widthCarton);
       this.levels.z = Math.floor(this.pallet.depth / this.depthCarton);
-
-      //   this.levels.x = Math.floor(this.pallet.width / this.depthCarton);
-      //   this.levels.z = Math.floor(this.pallet.depth / this.widthCarton);
-
-      // console.log(
-      //   this.carton.width,
-      //   this.carton.height,
-      //   this.carton.depth,
-      //   this.levels.x,
-      //   this.levels.y,
-      //   this.levels.z
-      // );
     } else {
       this.carton.width = this.depthCarton;
       this.carton.depth = this.widthCarton;
@@ -109,9 +90,6 @@ export default {
 
       this.setWidthCarton(this.carton.width);
       this.setDepthCarton(this.carton.depth);
-
-      //   this.levels.x = Math.floor(this.pallet.width / this.widthCarton);
-      //   this.levels.z = Math.floor(this.pallet.depth / this.depthCarton);
     }
 
     this.carton.height = this.heightCarton;
@@ -120,15 +98,6 @@ export default {
     this.setLevelX(this.levels.x);
     this.setLevelY(this.levels.y);
     this.setLevelZ(this.levels.z);
-
-    // console.log(
-    //   this.carton.width,
-    //   this.carton.height,
-    //   this.carton.depth,
-    //   this.levels.x,
-    //   this.levels.y,
-    //   this.levels.z
-    // );
 
     this.setNumberOfPackages(this.calculateNumberCartons);
     this.setWeightOfWholePallet(

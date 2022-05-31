@@ -42,7 +42,7 @@ export default {
   components: { Semitrailer3DComponent, BoxBorder },
   computed: {
     ...mapState({
-      widthSemitrailerFromStore: (state) => state.semitrailerWidth, //pomyslec czy to ma sens
+      widthSemitrailerFromStore: (state) => state.semitrailerWidth,
       heightSemitrailerFromStore: (state) => state.semitrailerHeight,
       depthSemitrailerFromStore: (state) => state.semitrailerDepth,
       maxHeightSemitrailerFromStore: (state) => state.semitrailerHeight,

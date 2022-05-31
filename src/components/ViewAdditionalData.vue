@@ -138,13 +138,9 @@
 
 <script>
 import { mapMutations } from "vuex";
-// import BoxBorder from "./BoxBorder.vue";
 
 export default {
   name: "ViewAdditionalData",
-  components: {
-    // BoxBorder,
-  },
   data() {
     return {
       whetherToSetHeight: false,

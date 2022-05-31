@@ -10,48 +10,42 @@ class Pallet {
   }
 
   createCarton(w = 1, h = 1, d = 1, x, y, z) {
-    const blockBox = new THREE.BoxBufferGeometry(w, h, d);
-
-    // const texture = new THREE.TextureLoader().load(
-    //   require("@/assets/everytexture.com-stock-paper-texture-00042.jpg")
-    // );
-
-    const block = new THREE.Mesh(
-      blockBox,
+    const BLOCK_BOX = new THREE.BoxBufferGeometry(w, h, d);
+    const BLOCK = new THREE.Mesh(
+      BLOCK_BOX,
       new THREE.MeshBasicMaterial({ color: 0xcc6633 })
-      // new THREE.MeshStandardMaterial({ map: texture })
     );
 
-    this.centerPoint.add(block);
-    block.position.x = x;
-    block.position.y = y;
-    block.position.z = z + 2;
+    this.centerPoint.add(BLOCK);
+    BLOCK.position.x = x;
+    BLOCK.position.y = y;
+    BLOCK.position.z = z + 2;
 
-    const edges = new THREE.EdgesGeometry(blockBox);
-    const line = new THREE.LineSegments(
-      edges,
+    const EDGES = new THREE.EdgesGeometry(BLOCK_BOX);
+    const LINE = new THREE.LineSegments(
+      EDGES,
       new THREE.LineBasicMaterial({ color: 0xffffff })
     );
-    this.centerPoint.add(line);
-    line.position.x = x;
-    line.position.y = y;
-    line.position.z = z + 2;
+    this.centerPoint.add(LINE);
+    LINE.position.x = x;
+    LINE.position.y = y;
+    LINE.position.z = z + 2;
   }
 
   createBox(w, h, d) {
-    const boardGeo = new THREE.BoxBufferGeometry(w, h, d);
-    const texture = new THREE.MeshStandardMaterial({
+    const BOARD_GEO = new THREE.BoxBufferGeometry(w, h, d);
+    const TEXTURE = new THREE.MeshStandardMaterial({
       map: new THREE.TextureLoader().load(
         require("@/assets/Wood_Pattern_001_basecolor.jpg")
       ),
     });
-    const noTexture = new THREE.MeshBasicMaterial({ color: 0xa34200 });
-    const mesh = new THREE.Mesh(
-      boardGeo,
-      this.#loadPalletTexture ? texture : noTexture
+    const NO_TEXTURE = new THREE.MeshBasicMaterial({ color: 0xa34200 });
+    const MESH = new THREE.Mesh(
+      BOARD_GEO,
+      this.#loadPalletTexture ? TEXTURE : NO_TEXTURE
     );
 
-    return mesh;
+    return MESH;
   }
 
   createBoard(w = 1, h = 1, d = 1, x = 0, y = 0, z = 0) {

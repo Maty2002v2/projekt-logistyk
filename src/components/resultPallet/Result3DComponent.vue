@@ -20,26 +20,26 @@ export default {
     loadTexture: Boolean,
   },
   data() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
+    const SCENE = new THREE.Scene();
+    const CAMERA = new THREE.PerspectiveCamera(
       75,
       window.innerWidth / 2 / window.innerHeight,
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const RENDERER = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-    const light1 = new THREE.PointLight(0xffffff, 2);
-    const light2 = new THREE.PointLight(0xffffff, 1);
-    const light3 = new THREE.PointLight(0xffffff, 1);
-    const light4 = new THREE.PointLight(0xffffff, 2);
+    const LIGHT1 = new THREE.PointLight(0xffffff, 2);
+    const LIGHT2 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT3 = new THREE.PointLight(0xffffff, 1);
+    const LIGHT4 = new THREE.PointLight(0xffffff, 2);
 
-    const Pallet =
+    const PALLET =
       this.typePallet == 1
         ? new SmallerPallet(this.loadTexture)
         : new LargePallet(this.loadTexture);
 
-    Pallet.cartonInitialization(
+    PALLET.cartonInitialization(
       this.widthCarton,
       this.heightCarton,
       this.depthCarton,
@@ -49,14 +49,14 @@ export default {
     );
 
     return {
-      scene: scene,
-      camera: camera,
-      renderer: renderer,
-      light1: light1,
-      light2: light2,
-      light3: light3,
-      light4: light4,
-      pallet: Pallet.centerPoint,
+      scene: SCENE,
+      camera: CAMERA,
+      renderer: RENDERER,
+      light1: LIGHT1,
+      light2: LIGHT2,
+      light3: LIGHT3,
+      light4: LIGHT4,
+      pallet: PALLET.centerPoint,
       lastScroll: 0,
       mouseX: 0,
       mouseY: 0,
@@ -92,7 +92,6 @@ export default {
   },
   destroyed() {
     this.scene.remove.apply(this.scene, this.scene.children);
-    // this.scene.clear();
     window.removeEventListener("wheel", this.perspectiveSeeing);
     window.removeEventListener("resize", this.windowResize);
     window.addEventListener("mousemove", this.documentMouseMove, false);
@@ -116,7 +115,6 @@ export default {
       this.renderer.render(this.scene, this.camera);
     },
     update() {
-      //   this.pallet.rotation.y += 0.01;
       this.camera.position.x += (this.mouseX - this.camera.position.x) * 0.05;
       this.camera.position.y += (-this.mouseY - this.camera.position.y) * 0.05;
       this.camera.lookAt(this.scene.position);
