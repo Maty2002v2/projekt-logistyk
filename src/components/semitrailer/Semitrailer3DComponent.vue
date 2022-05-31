@@ -353,7 +353,7 @@ export default {
 
                 let palletCenterPoint = pallet.centerPoint;
 
-                // pallet.rotation.y = Math.PI / 2;
+                // palletCenterPoint.rotation.y = Math.PI / 2;
                 this.pallets.add(palletCenterPoint);
                 palletCenterPoint.position.set(
                   this.depthSemitrailer / 2 - Pallet.width / 2 - z, //0

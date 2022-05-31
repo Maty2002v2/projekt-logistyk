@@ -107,6 +107,9 @@ export default {
       this.levels.x = Math.floor(this.pallet.width / this.depthCarton);
       this.levels.z = Math.floor(this.pallet.depth / this.widthCarton);
 
+      this.setWidthCarton(this.carton.width);
+      this.setDepthCarton(this.carton.depth);
+
       //   this.levels.x = Math.floor(this.pallet.width / this.widthCarton);
       //   this.levels.z = Math.floor(this.pallet.depth / this.depthCarton);
     }
@@ -255,6 +258,8 @@ export default {
       "setLevelX",
       "setLevelY",
       "setLevelZ",
+      "setWidthCarton",
+      "setDepthCarton",
     ]),
   },
 };

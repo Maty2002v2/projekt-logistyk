@@ -44,6 +44,7 @@ class SmallerPallet extends Pallet {
   cartonInitialization(w = 1, h = 1, d = 1, lx = 1, ly = 1, lz = 1) {
     /* Sprawdzenie liczb kartonów w poszczególnych poziomach */
     if (lx < 2 && ly < 2 && lz < 2) {
+      //imo powinno byc lub
       for (let z = 0; z < d * lz; z += d) {
         for (let x = 0; x < w * lx; x += w) {
           for (let y = 12 + h / 2; y - 12 <= h * ly; y += h) {
