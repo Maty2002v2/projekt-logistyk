@@ -1,5 +1,7 @@
 <template>
-  <button @click="restoreData">Przywróć dane</button>
+  <button @click="restoreData" class="buttonBgTransparent">
+    Przywróć dane
+  </button>
 </template>
 
 <script>
