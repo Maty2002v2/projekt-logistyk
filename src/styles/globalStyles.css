@@ -42,6 +42,7 @@
 }
 
 input[type="number"],
+/* input[type="range"], */
 select {
   display: block;
   width: 80%;

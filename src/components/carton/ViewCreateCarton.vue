@@ -2,17 +2,25 @@
   <div class="flex-container">
     <div class="segmentBlock segmentInformation">
       <box-border title="wymiary kartonu">
-        <label for="cartonWidth">Szerokość (cm) : </label>
-        <input id="cartonWidth" type="number" v-model.number="width" />
+        <range-input-component
+          labelText="Szerokość (cm) :"
+          v-model.number="width"
+        ></range-input-component>
         <br />
-        <label for="cartonHeight">Wysokość (cm) :</label>
-        <input id="cartonHeight" type="number" v-model.number="height" />
+        <range-input-component
+          labelText="Wysokość (cm) : "
+          v-model.number="height"
+        ></range-input-component>
         <br />
-        <label for="cartonDepth">Grubość (cm) : </label>
-        <input id="cartonDepth" type="number" v-model.number="depth" />
+        <range-input-component
+          labelText="Grubość (cm) : "
+          v-model.number="depth"
+        ></range-input-component>
         <br />
-        <label for="cartonWeight">Waga (kg) : </label>
-        <input id="cartonWeight" type="number" v-model.number="weight" />
+        <range-input-component
+          labelText="Waga (kg) : "
+          v-model.number="weight"
+        ></range-input-component>
       </box-border>
       <box-border v-if="Boolean(oldValueWidth)" title="Poprzednie dane">
         <p>Szerokość: {{ oldValueWidth }}</p>
@@ -48,6 +56,7 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 import BoxBorder from "../BoxBorder.vue";
+import RangeInputComponent from "../RangeInputComponent.vue";
 import RestoreButton from "../RestoreButton.vue";
 import TooltipComponent from "../TooltipComponent.vue";
 import Carton3DComponent from "./Carton3DComponent.vue";
@@ -59,6 +68,7 @@ export default {
     BoxBorder,
     RestoreButton,
     TooltipComponent,
+    RangeInputComponent,
   },
   created() {
     this.setWidthCarton(1);
@@ -70,6 +80,11 @@ export default {
     this.setOldValueHeight(this.height);
     this.setOldValueDepth(this.depth);
     this.setOldValueWeight(this.weight);
+  },
+  data() {
+    return {
+      x: 3,
+    };
   },
   computed: {
     width: {
