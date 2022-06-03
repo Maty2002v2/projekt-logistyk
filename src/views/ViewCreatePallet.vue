@@ -16,8 +16,8 @@
 
 <script>
 import { mapMutations } from "vuex";
-import BoxBorder from "../BoxBorder.vue";
-import Pallet3DComponent from "./Pallet3DComponent.vue";
+import BoxBorder from "../components/BoxBorder.vue";
+import Pallet3DComponent from "../components/pallet/Pallet3DComponent.vue";
 
 export default {
   name: "CreatePalletViwe",

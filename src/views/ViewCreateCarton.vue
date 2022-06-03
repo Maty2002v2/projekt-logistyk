@@ -55,11 +55,11 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import BoxBorder from "../BoxBorder.vue";
-import RangeInputComponent from "../RangeInputComponent.vue";
-import RestoreButton from "../RestoreButton.vue";
-import TooltipComponent from "../TooltipComponent.vue";
-import Carton3DComponent from "./Carton3DComponent.vue";
+import BoxBorder from "../components/BoxBorder.vue";
+import RangeInputComponent from "../components/RangeInputComponent.vue";
+import RestoreButton from "../components/RestoreButton.vue";
+import TooltipComponent from "../components/TooltipComponent.vue";
+import Carton3DComponent from "../components/carton/Carton3DComponent.vue";
 
 export default {
   name: "ViewCreatePallet",

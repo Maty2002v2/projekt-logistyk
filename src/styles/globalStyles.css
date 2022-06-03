@@ -9,14 +9,17 @@
   height: 100vh;
   overflow-x: hidden;
 }
+
 .segmentBlock {
   width: 50%;
 }
+
 .segmentInformation {
   position: relative;
   padding: 3px 0px 80px 0px;
   text-align: center;
 }
+
 .segmentInformation::after {
   position: absolute;
   z-index: -999;
@@ -30,10 +33,12 @@
   background-size: cover;
   opacity: 0.3;
 }
+
 .segment3D {
   min-height: 50vh;
   background: white;
 }
+
 .label-group {
   display: flex;
   align-items: center;
@@ -109,6 +114,10 @@ input[type="checkbox"]:checked::after {
 .button:active,
 .buttonBgTransparent:active {
   transform: scale(0.8);
+}
+
+.links {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 800px) {

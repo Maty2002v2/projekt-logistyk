@@ -37,8 +37,8 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import BoxBorder from "../BoxBorder.vue";
-import Result3DComponent from "./Result3DComponent.vue";
+import BoxBorder from "../components/BoxBorder.vue";
+import Result3DComponent from "../components/resultPallet/Result3DComponent.vue";
 
 export default {
   name: "ViewResultsPallet",

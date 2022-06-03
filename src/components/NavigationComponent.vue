@@ -1,10 +1,20 @@
 <template>
   <div class="navigation">
-    <button @click="back()" class="button">🡸</button>
-    <button @click="next()" class="button">🡺</button>
+    <router-link
+      :to="listPath[step > 0 ? step - 1 : 0]"
+      class="button links"
+      @click.native="back()"
+      >🡸</router-link
+    >
+    <router-link
+      :to="listPath[step < listPath.length - 1 ? step + 1 : step]"
+      class="button links"
+      @click.native="next()"
+      >🡺</router-link
+    >
     <br />
     <div class="dotts-wrapper">
-      <span class="dott"></span>
+      <span class="dott active-dott"></span>
       <span class="dott"></span>
       <span class="dott"></span>
       <span class="dott"></span>
@@ -19,6 +29,13 @@ export default {
   data() {
     return {
       step: 0,
+      listPath: [
+        "/",
+        "/pallet",
+        "/additional-data",
+        "/results-pallet",
+        "/semitrailer",
+      ],
     };
   },
   methods: {
@@ -51,6 +68,7 @@ export default {
 div {
   text-align: center;
 }
+
 span {
   display: inline-block;
   width: 5px;
@@ -59,19 +77,23 @@ span {
   background: #6e7491;
   border-radius: 50%;
 }
+
 .navigation {
   position: fixed;
   bottom: -20px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .dotts-wrapper {
   position: relative;
   margin-top: 10px;
 }
+
 .dott {
   transition: 0.1s all ease-in;
 }
+
 .active-dott {
   margin: 2px 5px;
   background: #495074;

@@ -34,8 +34,8 @@
 
 <script>
 import { mapState } from "vuex";
-import BoxBorder from "../BoxBorder.vue";
-import Semitrailer3DComponent from "./Semitrailer3DComponent.vue";
+import BoxBorder from "../components/BoxBorder.vue";
+import Semitrailer3DComponent from "../components/semitrailer/Semitrailer3DComponent.vue";
 
 export default {
   name: "ViewCreateSemitrailer",

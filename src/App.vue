@@ -1,50 +1,18 @@
 <template>
   <div id="app">
-    <component :is="is"></component>
-    <navigation-component
-      @navigationEvent="navigationEvent"
-    ></navigation-component>
+    <router-view></router-view>
+    <navigation-component></navigation-component>
   </div>
 </template>
 
 <script>
-import ViewAdditionalData from "./components/ViewAdditionalData";
-import ViewCreateCarton from "./components/carton/ViewCreateCarton";
-import ViewCreatePallet from "./components/pallet/ViewCreatePallet";
-import ViewResultsPallet from "./components/resultPallet/ViewResultsPallet";
-import ViewCreateSemitrailer from "./components/semitrailer/ViewCreateSemitrailer";
-import NavigationComponent from "./components/NavigationComponent";
-
 import "@/styles/globalStyles.css";
 import "@/styles/switchButton.css";
+import NavigationComponent from "./components/NavigationComponent.vue";
 
 export default {
+  components: { NavigationComponent },
   name: "App",
-  components: {
-    ViewAdditionalData,
-    ViewCreateCarton,
-    ViewCreatePallet,
-    ViewResultsPallet,
-    ViewCreateSemitrailer,
-    NavigationComponent,
-  },
-  data() {
-    return {
-      viewsList: [
-        "ViewCreateCarton",
-        "ViewCreatePallet",
-        "ViewAdditionalData",
-        "ViewResultsPallet",
-        "ViewCreateSemitrailer",
-      ],
-      is: "ViewCreateCarton",
-    };
-  },
-  methods: {
-    navigationEvent(viewIdex) {
-      this.is = this.viewsList[viewIdex];
-    },
-  },
 };
 </script>
 
