@@ -76,7 +76,11 @@ export default {
   border-radius: 3px;
   margin: 0;
 
-  -webkit-appearance: none;
+  -webkit-appearance: none; /* WebKit */
+  -moz-appearance: none; /* Mozilla */
+  -o-appearance: none; /* Opera */
+  -ms-appearance: none; /* Internet Explorer */
+  appearance: none; /* CSS3 */
   outline: none;
 }
 
