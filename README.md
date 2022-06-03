@@ -2,7 +2,7 @@
 
 Dokumentacja jest po polsku ponieważ pisane to było dla szkoły.
 
-> Podgląd na żywo [_tutaj_](https://62976606d2bc8912e4a3e70d--legendary-pasca-c3f919.netlify.app/).
+> Podgląd na żywo [_tutaj_](https://gh-pages--legendary-pasca-c3f919.netlify.app/#/).
 
 ## Spis treści
 
@@ -23,6 +23,7 @@ Dokumentacja jest po polsku ponieważ pisane to było dla szkoły.
 ## Używane technologie
 
 - vue: ^2.6.11
+- vue-router: ^3.5.3
 - vuex: ^3.6.2
 - three: ^0.135.0
 - gh-pages: ^4.0.0
