@@ -128,7 +128,7 @@ export default {
 
 .selectorBtnValue {
   position: relative;
-  top: -9px;
+  top: -8px;
   left: -4px;
 
   display: inline-block;
